@@ -5,7 +5,7 @@
 -- Dumped from database version 17.4
 -- Dumped by pg_dump version 17.4
 
--- Started on 2025-04-25 23:10:56
+-- Started on 2025-04-29 23:30:47
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -743,6 +743,95 @@ INSERT INTO public.firefightershifts VALUES (39, 81);
 INSERT INTO public.firefightershifts VALUES (55, 82);
 INSERT INTO public.firefightershifts VALUES (41, 82);
 INSERT INTO public.firefightershifts VALUES (6, 82);
+INSERT INTO public.firefightershifts VALUES (15, 83);
+INSERT INTO public.firefightershifts VALUES (12, 83);
+INSERT INTO public.firefightershifts VALUES (49, 83);
+INSERT INTO public.firefightershifts VALUES (70, 83);
+INSERT INTO public.firefightershifts VALUES (45, 83);
+INSERT INTO public.firefightershifts VALUES (33, 83);
+INSERT INTO public.firefightershifts VALUES (67, 83);
+INSERT INTO public.firefightershifts VALUES (19, 84);
+INSERT INTO public.firefightershifts VALUES (18, 84);
+INSERT INTO public.firefightershifts VALUES (53, 84);
+INSERT INTO public.firefightershifts VALUES (31, 85);
+INSERT INTO public.firefightershifts VALUES (61, 85);
+INSERT INTO public.firefightershifts VALUES (43, 85);
+INSERT INTO public.firefightershifts VALUES (13, 86);
+INSERT INTO public.firefightershifts VALUES (35, 86);
+INSERT INTO public.firefightershifts VALUES (71, 86);
+INSERT INTO public.firefightershifts VALUES (22, 86);
+INSERT INTO public.firefightershifts VALUES (48, 86);
+INSERT INTO public.firefightershifts VALUES (58, 86);
+INSERT INTO public.firefightershifts VALUES (16, 87);
+INSERT INTO public.firefightershifts VALUES (25, 87);
+INSERT INTO public.firefightershifts VALUES (60, 87);
+INSERT INTO public.firefightershifts VALUES (51, 88);
+INSERT INTO public.firefightershifts VALUES (26, 88);
+INSERT INTO public.firefightershifts VALUES (23, 88);
+INSERT INTO public.firefightershifts VALUES (50, 88);
+INSERT INTO public.firefightershifts VALUES (72, 88);
+INSERT INTO public.firefightershifts VALUES (11, 88);
+INSERT INTO public.firefightershifts VALUES (59, 88);
+INSERT INTO public.firefightershifts VALUES (7, 88);
+INSERT INTO public.firefightershifts VALUES (73, 88);
+INSERT INTO public.firefightershifts VALUES (3, 89);
+INSERT INTO public.firefightershifts VALUES (44, 89);
+INSERT INTO public.firefightershifts VALUES (54, 89);
+INSERT INTO public.firefightershifts VALUES (37, 90);
+INSERT INTO public.firefightershifts VALUES (8, 90);
+INSERT INTO public.firefightershifts VALUES (52, 90);
+INSERT INTO public.firefightershifts VALUES (9, 91);
+INSERT INTO public.firefightershifts VALUES (75, 91);
+INSERT INTO public.firefightershifts VALUES (27, 91);
+INSERT INTO public.firefightershifts VALUES (17, 91);
+INSERT INTO public.firefightershifts VALUES (65, 91);
+INSERT INTO public.firefightershifts VALUES (66, 91);
+INSERT INTO public.firefightershifts VALUES (69, 91);
+INSERT INTO public.firefightershifts VALUES (30, 92);
+INSERT INTO public.firefightershifts VALUES (40, 92);
+INSERT INTO public.firefightershifts VALUES (62, 92);
+INSERT INTO public.firefightershifts VALUES (74, 93);
+INSERT INTO public.firefightershifts VALUES (4, 93);
+INSERT INTO public.firefightershifts VALUES (36, 93);
+INSERT INTO public.firefightershifts VALUES (47, 93);
+INSERT INTO public.firefightershifts VALUES (56, 93);
+INSERT INTO public.firefightershifts VALUES (28, 93);
+INSERT INTO public.firefightershifts VALUES (20, 94);
+INSERT INTO public.firefightershifts VALUES (32, 94);
+INSERT INTO public.firefightershifts VALUES (64, 94);
+INSERT INTO public.firefightershifts VALUES (24, 95);
+INSERT INTO public.firefightershifts VALUES (29, 95);
+INSERT INTO public.firefightershifts VALUES (68, 95);
+INSERT INTO public.firefightershifts VALUES (76, 96);
+INSERT INTO public.firefightershifts VALUES (14, 96);
+INSERT INTO public.firefightershifts VALUES (5, 96);
+INSERT INTO public.firefightershifts VALUES (21, 96);
+INSERT INTO public.firefightershifts VALUES (39, 96);
+INSERT INTO public.firefightershifts VALUES (55, 97);
+INSERT INTO public.firefightershifts VALUES (41, 97);
+INSERT INTO public.firefightershifts VALUES (6, 97);
+INSERT INTO public.firefightershifts VALUES (15, 98);
+INSERT INTO public.firefightershifts VALUES (12, 98);
+INSERT INTO public.firefightershifts VALUES (49, 98);
+INSERT INTO public.firefightershifts VALUES (70, 98);
+INSERT INTO public.firefightershifts VALUES (45, 98);
+INSERT INTO public.firefightershifts VALUES (33, 98);
+INSERT INTO public.firefightershifts VALUES (67, 98);
+INSERT INTO public.firefightershifts VALUES (19, 99);
+INSERT INTO public.firefightershifts VALUES (18, 99);
+INSERT INTO public.firefightershifts VALUES (53, 99);
+INSERT INTO public.firefightershifts VALUES (31, 100);
+INSERT INTO public.firefightershifts VALUES (61, 100);
+INSERT INTO public.firefightershifts VALUES (43, 100);
+INSERT INTO public.firefightershifts VALUES (13, 101);
+INSERT INTO public.firefightershifts VALUES (35, 101);
+INSERT INTO public.firefightershifts VALUES (71, 101);
+INSERT INTO public.firefightershifts VALUES (22, 101);
+INSERT INTO public.firefightershifts VALUES (48, 101);
+INSERT INTO public.firefightershifts VALUES (58, 101);
+INSERT INTO public.firefightershifts VALUES (16, 102);
+INSERT INTO public.firefightershifts VALUES (25, 102);
+INSERT INTO public.firefightershifts VALUES (60, 102);
 
 
 --
@@ -869,6 +958,45 @@ INSERT INTO public.incidents VALUES (115, '2025-04-25', 'Medical', 4, 'MVA - 1 v
 INSERT INTO public.incidents VALUES (116, '2025-04-25', 'Other', 7, 'Illegal Burning', 0.18, 'B');
 INSERT INTO public.incidents VALUES (117, '2025-04-25', 'Other', 3, 'Illegal Burning', 0.22, 'B');
 INSERT INTO public.incidents VALUES (118, '2025-04-25', 'Medical', 1, 'Lift Assist - non emergent, biohaz', 0.27, 'B');
+INSERT INTO public.incidents VALUES (119, '2025-04-25', 'Medical', 6, 'Lift Assist - emergent', 0.17, 'B');
+INSERT INTO public.incidents VALUES (120, '2025-04-26', 'Alarm', 6, 'Water Flow alarm - false alarm', 0.50, 'C');
+INSERT INTO public.incidents VALUES (121, '2025-04-26', 'Alarm', 6, 'Fire Alarm - False alarm', 0.18, 'C');
+INSERT INTO public.incidents VALUES (122, '2025-04-26', 'Alarm', 7, 'CO Alarm - False alarm', 0.17, 'C');
+INSERT INTO public.incidents VALUES (123, '2025-04-26', 'Medical', 1, 'Chest Pains - LifeNet extended ETA', 0.37, 'C');
+INSERT INTO public.incidents VALUES (124, '2025-04-26', 'Medical', 6, 'Respiratory Distress - Lifenet extended ETA', 0.27, 'C');
+INSERT INTO public.incidents VALUES (125, '2025-04-26', 'Medical', 7, 'Lift Assist - emergent', 0.17, 'C');
+INSERT INTO public.incidents VALUES (126, '2025-04-26', 'Medical', 6, 'MCI - CPR in progress', 0.73, 'C');
+INSERT INTO public.incidents VALUES (127, '2025-04-26', 'Medical', 1, 'MVA w Ped - 1 transported', 0.17, 'C');
+INSERT INTO public.incidents VALUES (128, '2025-04-26', 'Medical', 3, 'Lift Assist - non emergent', 0.23, 'C');
+INSERT INTO public.incidents VALUES (129, '2025-04-26', 'Medical', 1, 'Respiratory Distress - Lifenet extended ETA', 0.30, 'C');
+INSERT INTO public.incidents VALUES (130, '2025-04-26', 'Medical', 1, 'MVA vs Bicycle - 2 transported', 0.08, 'C');
+INSERT INTO public.incidents VALUES (131, '2025-04-26', 'Medical', 1, 'MVA w Ped - 1 transported', 0.15, 'C');
+INSERT INTO public.incidents VALUES (132, '2025-04-27', 'Alarm', 1, 'Fire Alarm - General alarm, false', 0.13, 'C');
+INSERT INTO public.incidents VALUES (133, '2025-04-27', 'Alarm', 4, 'Fire Alarm - Counter sprayed with bug spray, false alarm', 0.25, 'C');
+INSERT INTO public.incidents VALUES (134, '2025-04-27', 'Medical', 1, 'Lift Assist - non emergent, biohaz', 0.55, 'C');
+INSERT INTO public.incidents VALUES (135, '2025-04-27', 'Other', 1, 'Service Call - downed powerline on vehicle', 0.67, 'C');
+INSERT INTO public.incidents VALUES (136, '2025-04-27', 'Other', 6, 'CO Alarm - smell of gas inside residence', 0.25, 'A');
+INSERT INTO public.incidents VALUES (137, '2025-04-27', 'Medical', 1, 'Lift Assist - non emergent, biohaz', 1.28, 'A');
+INSERT INTO public.incidents VALUES (138, '2025-04-27', 'Medical', 1, 'Lift Assist - non emergent', 0.15, 'A');
+INSERT INTO public.incidents VALUES (139, '2025-04-27', 'Medical', 1, 'Lift Assist - non emergent, coroner req', 0.52, 'A');
+INSERT INTO public.incidents VALUES (140, '2025-04-27', 'Fire', 4, 'Vehicle Fire - EB lane, engine comp involved', 0.25, 'A');
+INSERT INTO public.incidents VALUES (141, '2025-04-28', 'Medical', 6, 'Lift Assist - cancelled en route', 0.02, 'B');
+INSERT INTO public.incidents VALUES (142, '2025-04-28', 'Alarm', 4, 'Smoke Alarm - false', 0.10, 'B');
+INSERT INTO public.incidents VALUES (143, '2025-04-28', 'Medical', 7, 'Fall alert - not responding, 1 transported', 0.33, 'B');
+INSERT INTO public.incidents VALUES (144, '2025-04-28', 'Medical', 6, 'Lift Assist - non emergent', 0.33, 'B');
+INSERT INTO public.incidents VALUES (145, '2025-04-28', 'Alarm', 6, 'Fire Alarm - pull station, false', 0.18, 'B');
+INSERT INTO public.incidents VALUES (146, '2025-04-28', 'Medical', 3, 'Chest Pains', 0.23, 'B');
+INSERT INTO public.incidents VALUES (147, '2025-04-28', 'Other', 7, 'Illegal Burning', 0.27, 'B');
+INSERT INTO public.incidents VALUES (148, '2025-04-28', 'Alarm', 1, 'Fire Alarm - Burnt food, false', 0.30, 'B');
+INSERT INTO public.incidents VALUES (149, '2025-04-28', 'Medical', 3, 'Female fell 25 feet down slope', 0.87, 'B');
+INSERT INTO public.incidents VALUES (150, '2025-04-28', 'Medical', 3, 'Overdose - Fentanyl, narcan, AMA', 0.15, 'B');
+INSERT INTO public.incidents VALUES (151, '2025-04-28', 'Medical', 4, 'MVA - 2 vehicles', 0.15, 'B');
+INSERT INTO public.incidents VALUES (152, '2025-04-29', 'Alarm', 7, 'Smoke Alarm - false alarm', 0.10, 'C');
+INSERT INTO public.incidents VALUES (153, '2025-04-29', 'Alarm', 6, 'Fire Alarm - pull station, false', 0.22, 'C');
+INSERT INTO public.incidents VALUES (154, '2025-04-29', 'Other', 1, 'Illegal burning', 0.48, 'C');
+INSERT INTO public.incidents VALUES (155, '2025-04-29', 'Medical', 1, 'Lift Assist - non emergent', 0.25, 'C');
+INSERT INTO public.incidents VALUES (156, '2025-04-29', 'Alarm', 4, 'Smoke Alarm - burnt food, false', 0.08, 'C');
+INSERT INTO public.incidents VALUES (157, '2025-04-29', 'Alarm', 6, 'Vehicle Fire - engine overheating, false', 0.07, 'C');
 
 
 --
@@ -1131,6 +1259,79 @@ INSERT INTO public.incidentunits VALUES (116, 7);
 INSERT INTO public.incidentunits VALUES (117, 3);
 INSERT INTO public.incidentunits VALUES (117, 14);
 INSERT INTO public.incidentunits VALUES (118, 1);
+INSERT INTO public.incidentunits VALUES (119, 6);
+INSERT INTO public.incidentunits VALUES (120, 121);
+INSERT INTO public.incidentunits VALUES (120, 6);
+INSERT INTO public.incidentunits VALUES (120, 4);
+INSERT INTO public.incidentunits VALUES (120, 10);
+INSERT INTO public.incidentunits VALUES (121, 121);
+INSERT INTO public.incidentunits VALUES (121, 6);
+INSERT INTO public.incidentunits VALUES (121, 4);
+INSERT INTO public.incidentunits VALUES (121, 10);
+INSERT INTO public.incidentunits VALUES (122, 7);
+INSERT INTO public.incidentunits VALUES (123, 1);
+INSERT INTO public.incidentunits VALUES (124, 6);
+INSERT INTO public.incidentunits VALUES (125, 7);
+INSERT INTO public.incidentunits VALUES (126, 6);
+INSERT INTO public.incidentunits VALUES (127, 1);
+INSERT INTO public.incidentunits VALUES (127, 12);
+INSERT INTO public.incidentunits VALUES (128, 3);
+INSERT INTO public.incidentunits VALUES (129, 1);
+INSERT INTO public.incidentunits VALUES (130, 1);
+INSERT INTO public.incidentunits VALUES (130, 12);
+INSERT INTO public.incidentunits VALUES (131, 1);
+INSERT INTO public.incidentunits VALUES (131, 12);
+INSERT INTO public.incidentunits VALUES (132, 121);
+INSERT INTO public.incidentunits VALUES (132, 1);
+INSERT INTO public.incidentunits VALUES (132, 3);
+INSERT INTO public.incidentunits VALUES (132, 5);
+INSERT INTO public.incidentunits VALUES (133, 121);
+INSERT INTO public.incidentunits VALUES (133, 4);
+INSERT INTO public.incidentunits VALUES (133, 1);
+INSERT INTO public.incidentunits VALUES (133, 5);
+INSERT INTO public.incidentunits VALUES (134, 1);
+INSERT INTO public.incidentunits VALUES (135, 1);
+INSERT INTO public.incidentunits VALUES (136, 6);
+INSERT INTO public.incidentunits VALUES (137, 1);
+INSERT INTO public.incidentunits VALUES (138, 1);
+INSERT INTO public.incidentunits VALUES (139, 1);
+INSERT INTO public.incidentunits VALUES (140, 4);
+INSERT INTO public.incidentunits VALUES (141, 6);
+INSERT INTO public.incidentunits VALUES (142, 121);
+INSERT INTO public.incidentunits VALUES (142, 4);
+INSERT INTO public.incidentunits VALUES (142, 1);
+INSERT INTO public.incidentunits VALUES (142, 5);
+INSERT INTO public.incidentunits VALUES (143, 7);
+INSERT INTO public.incidentunits VALUES (144, 6);
+INSERT INTO public.incidentunits VALUES (145, 121);
+INSERT INTO public.incidentunits VALUES (145, 6);
+INSERT INTO public.incidentunits VALUES (145, 4);
+INSERT INTO public.incidentunits VALUES (145, 10);
+INSERT INTO public.incidentunits VALUES (146, 3);
+INSERT INTO public.incidentunits VALUES (147, 7);
+INSERT INTO public.incidentunits VALUES (148, 121);
+INSERT INTO public.incidentunits VALUES (148, 1);
+INSERT INTO public.incidentunits VALUES (148, 7);
+INSERT INTO public.incidentunits VALUES (148, 5);
+INSERT INTO public.incidentunits VALUES (149, 3);
+INSERT INTO public.incidentunits VALUES (150, 3);
+INSERT INTO public.incidentunits VALUES (151, 4);
+INSERT INTO public.incidentunits VALUES (151, 2);
+INSERT INTO public.incidentunits VALUES (152, 121);
+INSERT INTO public.incidentunits VALUES (152, 7);
+INSERT INTO public.incidentunits VALUES (152, 6);
+INSERT INTO public.incidentunits VALUES (152, 10);
+INSERT INTO public.incidentunits VALUES (153, 121);
+INSERT INTO public.incidentunits VALUES (153, 6);
+INSERT INTO public.incidentunits VALUES (153, 4);
+INSERT INTO public.incidentunits VALUES (153, 10);
+INSERT INTO public.incidentunits VALUES (154, 1);
+INSERT INTO public.incidentunits VALUES (155, 1);
+INSERT INTO public.incidentunits VALUES (156, 121);
+INSERT INTO public.incidentunits VALUES (156, 4);
+INSERT INTO public.incidentunits VALUES (156, 6);
+INSERT INTO public.incidentunits VALUES (156, 10);
+INSERT INTO public.incidentunits VALUES (157, 6);
 
 
 --
@@ -1221,6 +1422,26 @@ INSERT INTO public.shifts VALUES (79, 'B', 3, '2025-04-25', 24);
 INSERT INTO public.shifts VALUES (80, 'B', 4, '2025-04-25', 24);
 INSERT INTO public.shifts VALUES (81, 'B', 6, '2025-04-25', 24);
 INSERT INTO public.shifts VALUES (82, 'B', 7, '2025-04-25', 24);
+INSERT INTO public.shifts VALUES (83, 'C', 1, '2025-04-26', 24);
+INSERT INTO public.shifts VALUES (84, 'C', 3, '2025-04-26', 24);
+INSERT INTO public.shifts VALUES (85, 'C', 4, '2025-04-26', 24);
+INSERT INTO public.shifts VALUES (86, 'C', 6, '2025-04-26', 24);
+INSERT INTO public.shifts VALUES (87, 'C', 7, '2025-04-26', 24);
+INSERT INTO public.shifts VALUES (88, 'A', 1, '2025-04-27', 24);
+INSERT INTO public.shifts VALUES (89, 'A', 3, '2025-04-27', 24);
+INSERT INTO public.shifts VALUES (90, 'A', 4, '2025-04-27', 24);
+INSERT INTO public.shifts VALUES (91, 'A', 6, '2025-04-27', 24);
+INSERT INTO public.shifts VALUES (92, 'A', 7, '2025-04-27', 24);
+INSERT INTO public.shifts VALUES (93, 'B', 1, '2025-04-28', 24);
+INSERT INTO public.shifts VALUES (94, 'B', 3, '2025-04-28', 24);
+INSERT INTO public.shifts VALUES (95, 'B', 4, '2025-04-28', 24);
+INSERT INTO public.shifts VALUES (96, 'B', 6, '2025-04-28', 24);
+INSERT INTO public.shifts VALUES (97, 'B', 7, '2025-04-28', 24);
+INSERT INTO public.shifts VALUES (98, 'C', 1, '2025-04-29', 24);
+INSERT INTO public.shifts VALUES (99, 'C', 3, '2025-04-29', 24);
+INSERT INTO public.shifts VALUES (100, 'C', 4, '2025-04-29', 24);
+INSERT INTO public.shifts VALUES (101, 'C', 6, '2025-04-29', 24);
+INSERT INTO public.shifts VALUES (102, 'C', 7, '2025-04-29', 24);
 
 
 --
@@ -1276,7 +1497,7 @@ SELECT pg_catalog.setval('public.firefighters_firefighter_id_seq', 76, true);
 -- Name: incidents_incident_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.incidents_incident_id_seq', 118, true);
+SELECT pg_catalog.setval('public.incidents_incident_id_seq', 157, true);
 
 
 --
@@ -1285,7 +1506,7 @@ SELECT pg_catalog.setval('public.incidents_incident_id_seq', 118, true);
 -- Name: shifts_shift_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.shifts_shift_id_seq', 82, true);
+SELECT pg_catalog.setval('public.shifts_shift_id_seq', 102, true);
 
 
 --
@@ -1432,7 +1653,7 @@ ALTER TABLE ONLY public.units
     ADD CONSTRAINT units_station_id_fkey FOREIGN KEY (station_id) REFERENCES public.stations(station_id);
 
 
--- Completed on 2025-04-25 23:10:56
+-- Completed on 2025-04-29 23:30:48
 
 --
 -- PostgreSQL database dump complete
