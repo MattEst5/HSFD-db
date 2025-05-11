@@ -5,7 +5,7 @@
 -- Dumped from database version 17.4
 -- Dumped by pg_dump version 17.4
 
--- Started on 2025-05-07 22:12:16
+-- Started on 2025-05-10 23:13:47
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -51,25 +51,6 @@ SET row_security = off;
 --
 
 COMMENT ON DATABASE postgres IS 'default administrative connection database';
-
-
---
--- TOC entry 4 (class 2615 OID 2200)
--- Name: public; Type: SCHEMA; Schema: -; Owner: pg_database_owner
---
-
-CREATE SCHEMA public;
-
-
-ALTER SCHEMA public OWNER TO pg_database_owner;
-
---
--- TOC entry 4975 (class 0 OID 0)
--- Dependencies: 4
--- Name: SCHEMA public; Type: COMMENT; Schema: -; Owner: pg_database_owner
---
-
-COMMENT ON SCHEMA public IS 'standard public schema';
 
 
 --
@@ -136,7 +117,7 @@ CREATE SEQUENCE public.firefighters_firefighter_id_seq
 ALTER SEQUENCE public.firefighters_firefighter_id_seq OWNER TO postgres;
 
 --
--- TOC entry 4976 (class 0 OID 0)
+-- TOC entry 4975 (class 0 OID 0)
 -- Dependencies: 219
 -- Name: firefighters_firefighter_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -196,7 +177,7 @@ CREATE SEQUENCE public.incidents_incident_id_seq
 ALTER SEQUENCE public.incidents_incident_id_seq OWNER TO postgres;
 
 --
--- TOC entry 4977 (class 0 OID 0)
+-- TOC entry 4976 (class 0 OID 0)
 -- Dependencies: 222
 -- Name: incidents_incident_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -249,7 +230,7 @@ CREATE SEQUENCE public.shifts_shift_id_seq
 ALTER SEQUENCE public.shifts_shift_id_seq OWNER TO postgres;
 
 --
--- TOC entry 4978 (class 0 OID 0)
+-- TOC entry 4977 (class 0 OID 0)
 -- Dependencies: 227
 -- Name: shifts_shift_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -302,7 +283,7 @@ CREATE SEQUENCE public.stationshifts_station_shift_id_seq
 ALTER SEQUENCE public.stationshifts_station_shift_id_seq OWNER TO postgres;
 
 --
--- TOC entry 4979 (class 0 OID 0)
+-- TOC entry 4978 (class 0 OID 0)
 -- Dependencies: 225
 -- Name: stationshifts_station_shift_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -1070,6 +1051,73 @@ INSERT INTO public.firefightershifts VALUES (39, 11, '2025-05-07 07:00:00', '202
 INSERT INTO public.firefightershifts VALUES (55, 14, '2025-05-07 07:00:00', '2025-05-08 07:00:00');
 INSERT INTO public.firefightershifts VALUES (41, 14, '2025-05-07 07:00:00', '2025-05-08 07:00:00');
 INSERT INTO public.firefightershifts VALUES (6, 14, '2025-05-07 07:00:00', '2025-05-08 07:00:00');
+INSERT INTO public.firefightershifts VALUES (15, 3, '2025-05-08 07:00:00', '2025-05-09 07:00:00');
+INSERT INTO public.firefightershifts VALUES (12, 3, '2025-05-08 07:00:00', '2025-05-09 07:00:00');
+INSERT INTO public.firefightershifts VALUES (49, 3, '2025-05-08 07:00:00', '2025-05-09 07:00:00');
+INSERT INTO public.firefightershifts VALUES (70, 3, '2025-05-08 07:00:00', '2025-05-09 07:00:00');
+INSERT INTO public.firefightershifts VALUES (45, 3, '2025-05-08 07:00:00', '2025-05-09 07:00:00');
+INSERT INTO public.firefightershifts VALUES (33, 3, '2025-05-08 07:00:00', '2025-05-09 07:00:00');
+INSERT INTO public.firefightershifts VALUES (67, 3, '2025-05-08 07:00:00', '2025-05-09 07:00:00');
+INSERT INTO public.firefightershifts VALUES (19, 6, '2025-05-08 07:00:00', '2025-05-09 07:00:00');
+INSERT INTO public.firefightershifts VALUES (18, 6, '2025-05-08 07:00:00', '2025-05-09 07:00:00');
+INSERT INTO public.firefightershifts VALUES (53, 6, '2025-05-08 07:00:00', '2025-05-09 07:00:00');
+INSERT INTO public.firefightershifts VALUES (31, 9, '2025-05-08 07:00:00', '2025-05-09 07:00:00');
+INSERT INTO public.firefightershifts VALUES (61, 9, '2025-05-08 07:00:00', '2025-05-09 07:00:00');
+INSERT INTO public.firefightershifts VALUES (43, 9, '2025-05-08 07:00:00', '2025-05-09 07:00:00');
+INSERT INTO public.firefightershifts VALUES (13, 12, '2025-05-08 07:00:00', '2025-05-09 07:00:00');
+INSERT INTO public.firefightershifts VALUES (35, 12, '2025-05-08 07:00:00', '2025-05-09 07:00:00');
+INSERT INTO public.firefightershifts VALUES (71, 12, '2025-05-08 07:00:00', '2025-05-09 07:00:00');
+INSERT INTO public.firefightershifts VALUES (22, 12, '2025-05-08 07:00:00', '2025-05-09 07:00:00');
+INSERT INTO public.firefightershifts VALUES (48, 12, '2025-05-08 07:00:00', '2025-05-09 07:00:00');
+INSERT INTO public.firefightershifts VALUES (58, 12, '2025-05-08 07:00:00', '2025-05-09 07:00:00');
+INSERT INTO public.firefightershifts VALUES (16, 15, '2025-05-08 07:00:00', '2025-05-09 07:00:00');
+INSERT INTO public.firefightershifts VALUES (25, 15, '2025-05-08 07:00:00', '2025-05-09 07:00:00');
+INSERT INTO public.firefightershifts VALUES (60, 15, '2025-05-08 07:00:00', '2025-05-09 07:00:00');
+INSERT INTO public.firefightershifts VALUES (51, 1, '2025-05-09 07:00:00', '2025-05-10 07:00:00');
+INSERT INTO public.firefightershifts VALUES (26, 1, '2025-05-09 07:00:00', '2025-05-10 07:00:00');
+INSERT INTO public.firefightershifts VALUES (23, 1, '2025-05-09 07:00:00', '2025-05-10 07:00:00');
+INSERT INTO public.firefightershifts VALUES (50, 1, '2025-05-09 07:00:00', '2025-05-10 07:00:00');
+INSERT INTO public.firefightershifts VALUES (72, 1, '2025-05-09 07:00:00', '2025-05-10 07:00:00');
+INSERT INTO public.firefightershifts VALUES (11, 1, '2025-05-09 07:00:00', '2025-05-10 07:00:00');
+INSERT INTO public.firefightershifts VALUES (59, 1, '2025-05-09 07:00:00', '2025-05-10 07:00:00');
+INSERT INTO public.firefightershifts VALUES (7, 1, '2025-05-09 07:00:00', '2025-05-10 07:00:00');
+INSERT INTO public.firefightershifts VALUES (73, 1, '2025-05-09 07:00:00', '2025-05-10 07:00:00');
+INSERT INTO public.firefightershifts VALUES (3, 4, '2025-05-09 07:00:00', '2025-05-10 07:00:00');
+INSERT INTO public.firefightershifts VALUES (44, 4, '2025-05-09 07:00:00', '2025-05-10 07:00:00');
+INSERT INTO public.firefightershifts VALUES (54, 4, '2025-05-09 07:00:00', '2025-05-10 07:00:00');
+INSERT INTO public.firefightershifts VALUES (37, 7, '2025-05-09 07:00:00', '2025-05-10 07:00:00');
+INSERT INTO public.firefightershifts VALUES (8, 7, '2025-05-09 07:00:00', '2025-05-10 07:00:00');
+INSERT INTO public.firefightershifts VALUES (52, 7, '2025-05-09 07:00:00', '2025-05-10 07:00:00');
+INSERT INTO public.firefightershifts VALUES (9, 10, '2025-05-09 07:00:00', '2025-05-10 07:00:00');
+INSERT INTO public.firefightershifts VALUES (75, 10, '2025-05-09 07:00:00', '2025-05-10 07:00:00');
+INSERT INTO public.firefightershifts VALUES (27, 10, '2025-05-09 07:00:00', '2025-05-10 07:00:00');
+INSERT INTO public.firefightershifts VALUES (17, 10, '2025-05-09 07:00:00', '2025-05-10 07:00:00');
+INSERT INTO public.firefightershifts VALUES (65, 10, '2025-05-09 07:00:00', '2025-05-10 07:00:00');
+INSERT INTO public.firefightershifts VALUES (66, 10, '2025-05-09 07:00:00', '2025-05-10 07:00:00');
+INSERT INTO public.firefightershifts VALUES (69, 10, '2025-05-09 07:00:00', '2025-05-10 07:00:00');
+INSERT INTO public.firefightershifts VALUES (30, 13, '2025-05-09 07:00:00', '2025-05-10 07:00:00');
+INSERT INTO public.firefightershifts VALUES (40, 13, '2025-05-09 07:00:00', '2025-05-10 07:00:00');
+INSERT INTO public.firefightershifts VALUES (62, 13, '2025-05-09 07:00:00', '2025-05-10 07:00:00');
+INSERT INTO public.firefightershifts VALUES (74, 2, '2025-05-10 07:00:00', '2025-05-11 07:00:00');
+INSERT INTO public.firefightershifts VALUES (4, 2, '2025-05-10 07:00:00', '2025-05-11 07:00:00');
+INSERT INTO public.firefightershifts VALUES (36, 2, '2025-05-10 07:00:00', '2025-05-11 07:00:00');
+INSERT INTO public.firefightershifts VALUES (47, 2, '2025-05-10 07:00:00', '2025-05-11 07:00:00');
+INSERT INTO public.firefightershifts VALUES (56, 2, '2025-05-10 07:00:00', '2025-05-11 07:00:00');
+INSERT INTO public.firefightershifts VALUES (28, 2, '2025-05-10 07:00:00', '2025-05-11 07:00:00');
+INSERT INTO public.firefightershifts VALUES (20, 5, '2025-05-10 07:00:00', '2025-05-11 07:00:00');
+INSERT INTO public.firefightershifts VALUES (32, 5, '2025-05-10 07:00:00', '2025-05-11 07:00:00');
+INSERT INTO public.firefightershifts VALUES (64, 5, '2025-05-10 07:00:00', '2025-05-11 07:00:00');
+INSERT INTO public.firefightershifts VALUES (24, 8, '2025-05-10 07:00:00', '2025-05-11 07:00:00');
+INSERT INTO public.firefightershifts VALUES (29, 8, '2025-05-10 07:00:00', '2025-05-11 07:00:00');
+INSERT INTO public.firefightershifts VALUES (68, 8, '2025-05-10 07:00:00', '2025-05-11 07:00:00');
+INSERT INTO public.firefightershifts VALUES (76, 11, '2025-05-10 07:00:00', '2025-05-11 07:00:00');
+INSERT INTO public.firefightershifts VALUES (14, 11, '2025-05-10 07:00:00', '2025-05-11 07:00:00');
+INSERT INTO public.firefightershifts VALUES (5, 11, '2025-05-10 07:00:00', '2025-05-11 07:00:00');
+INSERT INTO public.firefightershifts VALUES (21, 11, '2025-05-10 07:00:00', '2025-05-11 07:00:00');
+INSERT INTO public.firefightershifts VALUES (39, 11, '2025-05-10 07:00:00', '2025-05-11 07:00:00');
+INSERT INTO public.firefightershifts VALUES (55, 14, '2025-05-10 07:00:00', '2025-05-11 07:00:00');
+INSERT INTO public.firefightershifts VALUES (41, 14, '2025-05-10 07:00:00', '2025-05-11 07:00:00');
+INSERT INTO public.firefightershifts VALUES (6, 14, '2025-05-10 07:00:00', '2025-05-11 07:00:00');
 
 
 --
@@ -1078,25 +1126,38 @@ INSERT INTO public.firefightershifts VALUES (6, 14, '2025-05-07 07:00:00', '2025
 -- Data for Name: incidents; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public.incidents VALUES (5, 'Medical', 1, 'Overdose - 1 transported', 0.09, '2025-04-10 17:00:00', 1);
-INSERT INTO public.incidents VALUES (4, 'Alarm', 3, 'Trash Fire - unauthorized', 0.07, '2025-04-10 15:00:00', 2);
-INSERT INTO public.incidents VALUES (2, 'Alarm', 6, 'Sprinkler Alarm - False', 0.23, '2025-04-10 10:16:00', 4);
-INSERT INTO public.incidents VALUES (3, 'Medical', 6, 'Chest pains - 1 transported', 0.20, '2025-04-10 12:52:00', 4);
-INSERT INTO public.incidents VALUES (1, 'Alarm', 7, 'School smoke detector - no fire', 0.07, '2025-04-10 08:57:00', 5);
-INSERT INTO public.incidents VALUES (15, 'Medical', 1, 'Respiratory distress - 1 transported', 0.33, '2025-04-11 19:36:00', 6);
-INSERT INTO public.incidents VALUES (13, 'Alarm', 1, 'Heavy Smoke in the area - false alarm', 0.25, '2025-04-11 17:04:00', 6);
-INSERT INTO public.incidents VALUES (12, 'Medical', 1, 'Female chest pains - 1 transported', 0.13, '2025-04-11 17:00:00', 6);
-INSERT INTO public.incidents VALUES (8, 'Medical', 1, 'Wrists cut - 1 transported', 0.22, '2025-04-11 09:28:00', 6);
-INSERT INTO public.incidents VALUES (10, 'Alarm', 3, 'Smoke detector activation - no fire', 0.08, '2025-04-11 15:49:00', 7);
-INSERT INTO public.incidents VALUES (9, 'Alarm', 4, 'Fire Alarm - false alarm', 0.08, '2025-04-11 11:16:00', 8);
-INSERT INTO public.incidents VALUES (6, 'Medical', 4, 'Rollover Accident - 4 transported', 0.75, '2025-04-11 06:13:00', 8);
-INSERT INTO public.incidents VALUES (16, 'Alarm', 6, 'Pull station - false alarm', 0.17, '2025-04-11 22:39:00', 9);
-INSERT INTO public.incidents VALUES (14, 'Alarm', 6, 'Pull station - false alarm', 0.07, '2025-04-11 18:11:00', 9);
-INSERT INTO public.incidents VALUES (11, 'Medical', 7, 'Minor MVA', 0.48, '2025-04-11 16:15:00', 10);
-INSERT INTO public.incidents VALUES (7, 'Alarm', 7, 'Fire Alarm - false alarm', 0.23, '2025-04-11 09:09:00', 10);
-INSERT INTO public.incidents VALUES (26, 'Medical', 1, 'Respiratory distress - 1 transported', 0.40, '2025-04-12 22:39:00', 11);
-INSERT INTO public.incidents VALUES (24, 'Medical', 1, 'Seizure - 1 transported', 0.20, '2025-04-12 16:18:00', 11);
-INSERT INTO public.incidents VALUES (21, 'Fire', 1, 'Vehicle Fire', 0.50, '2025-04-12 12:42:00', 11);
+INSERT INTO public.incidents VALUES (228, 'Other', 3, 'Service Call - Smell of Natural Gas', 0.25, '2025-05-10 11:25:00', 152);
+INSERT INTO public.incidents VALUES (229, 'Other', 6, 'Illegal Burning', 0.35, '2025-05-10 16:15:00', 154);
+INSERT INTO public.incidents VALUES (230, 'Alarm', 1, 'Sprinkler Alarm - false alarm, cancelled en route', 0.05, '2025-05-10 18:13:00', 151);
+INSERT INTO public.incidents VALUES (231, 'Alarm', 1, 'Caller could see fire in window - candle', 0.23, '2025-05-10 20:31:00', 151);
+INSERT INTO public.incidents VALUES (232, 'Medical', 6, 'MVA - 3 vehicle, minor injuries', 0.37, '2025-05-10 21:39:00', 154);
+INSERT INTO public.incidents VALUES (206, 'Medical', 1, 'MCI - 1 transported', 0.27, '2025-05-08 00:14:00', 141);
+INSERT INTO public.incidents VALUES (132, 'Alarm', 1, 'Fire Alarm - General alarm, false', 0.13, '2025-04-25 20:12:00', 76);
+INSERT INTO public.incidents VALUES (131, 'Medical', 1, 'MVA w Ped - 1 transported', 0.15, '2025-04-25 19:53:00', 76);
+INSERT INTO public.incidents VALUES (130, 'Medical', 1, 'MVA vs Bicycle - 2 transported', 0.08, '2025-04-25 16:14:00', 76);
+INSERT INTO public.incidents VALUES (129, 'Medical', 1, 'Respiratory Distress - Lifenet extended ETA', 0.30, '2025-04-25 15:51:00', 76);
+INSERT INTO public.incidents VALUES (127, 'Medical', 1, 'MVA w Ped - 1 transported', 0.17, '2025-04-25 10:34:00', 76);
+INSERT INTO public.incidents VALUES (123, 'Medical', 1, 'Chest Pains - LifeNet extended ETA', 0.37, '2025-04-25 07:42:00', 76);
+INSERT INTO public.incidents VALUES (128, 'Medical', 3, 'Lift Assist - non emergent', 0.23, '2025-04-25 11:48:00', 77);
+INSERT INTO public.incidents VALUES (133, 'Alarm', 4, 'Fire Alarm - Counter sprayed with bug spray, false alarm', 0.25, '2025-04-25 21:57:00', 78);
+INSERT INTO public.incidents VALUES (126, 'Medical', 6, 'MCI - CPR in progress', 0.73, '2025-04-25 09:48:00', 79);
+INSERT INTO public.incidents VALUES (124, 'Medical', 6, 'Respiratory Distress - Lifenet extended ETA', 0.27, '2025-04-25 08:40:00', 79);
+INSERT INTO public.incidents VALUES (121, 'Alarm', 6, 'Fire Alarm - False alarm', 0.18, '2025-04-25 00:35:00', 79);
+INSERT INTO public.incidents VALUES (125, 'Medical', 7, 'Lift Assist - emergent', 0.17, '2025-04-25 09:02:00', 80);
+INSERT INTO public.incidents VALUES (122, 'Alarm', 7, 'CO Alarm - False alarm', 0.17, '2025-04-25 02:26:00', 80);
+INSERT INTO public.incidents VALUES (139, 'Medical', 1, 'Lift Assist - non emergent, coroner req', 0.52, '2025-04-26 13:07:00', 81);
+INSERT INTO public.incidents VALUES (138, 'Medical', 1, 'Lift Assist - non emergent', 0.15, '2025-04-26 12:45:00', 81);
+INSERT INTO public.incidents VALUES (217, 'Medical', 7, 'Head trauma from fall w entrapment', 0.18, '2025-05-09 14:42:00', 150);
+INSERT INTO public.incidents VALUES (218, 'Alarm', 1, 'Fire Alarm - general, false alarm', 0.13, '2025-05-09 15:47:00', 146);
+INSERT INTO public.incidents VALUES (219, 'Medical', 1, 'Lift Assist - non emergent', 0.25, '2025-05-09 17:57:00', 146);
+INSERT INTO public.incidents VALUES (220, 'Alarm', 1, 'Fire Alarm - general, false alarm', 0.43, '2025-05-09 18:08:00', 146);
+INSERT INTO public.incidents VALUES (221, 'Medical', 1, 'Lift Assist - emergent', 0.17, '2025-05-09 18:36:00', 146);
+INSERT INTO public.incidents VALUES (222, 'Alarm', 6, 'Fire Alarm - general, false alarm', 0.10, '2025-05-09 21:39:00', 149);
+INSERT INTO public.incidents VALUES (223, 'Fire', 3, 'Structure Fire - Apartment, grease fire/room and contents', 0.45, '2025-05-09 21:40:00', 147);
+INSERT INTO public.incidents VALUES (224, 'Medical', 7, 'Lift Assist - non emergent', 0.35, '2025-05-09 21:45:00', 150);
+INSERT INTO public.incidents VALUES (225, 'Medical', 6, 'MVA - 2 vehicle, no injuries', 0.50, '2025-05-09 22:12:00', 149);
+INSERT INTO public.incidents VALUES (226, 'Alarm', 6, 'Fire Alarm - residential, false alarm', 0.10, '2025-05-10 02:18:00', 154);
+INSERT INTO public.incidents VALUES (227, 'Medical', 6, 'Diabetic coma - low blood sugar', 0.32, '2025-05-10 04:57:00', 154);
 INSERT INTO public.incidents VALUES (20, 'Other', 1, 'Unauthorized burning', 0.10, '2025-04-12 08:13:00', 11);
 INSERT INTO public.incidents VALUES (18, 'Medical', 1, 'Rollover accident - 3 transported', 0.57, '2025-04-12 02:01:00', 11);
 INSERT INTO public.incidents VALUES (25, 'Medical', 4, 'MCI', 0.13, '2025-04-12 16:21:00', 13);
@@ -1112,15 +1173,13 @@ INSERT INTO public.incidents VALUES (30, 'Fire', 4, 'Stove Fire - Smoking', 0.11
 INSERT INTO public.incidents VALUES (33, 'Other', 6, 'Service call - Fluid clean up', 0.28, '2025-04-13 21:50:00', 19);
 INSERT INTO public.incidents VALUES (29, 'Fire', 6, 'Grass Fire - Kimery', 0.06, '2025-04-13 08:21:00', 19);
 INSERT INTO public.incidents VALUES (34, 'Alarm', 7, 'Fire Alarm - False Alarm', 0.08, '2025-04-13 21:59:00', 20);
-INSERT INTO public.incidents VALUES (37, 'Medical', 1, 'Non Emergent - Lift Assist', 0.18, '2025-04-14 09:28:00', 21);
-INSERT INTO public.incidents VALUES (35, 'Medical', 1, 'Non Emergent Lift Assist', 0.52, '2025-04-14 02:11:00', 21);
-INSERT INTO public.incidents VALUES (41, 'Medical', 3, 'CPR - DOA', 0.13, '2025-04-14 22:57:00', 22);
-INSERT INTO public.incidents VALUES (36, 'Other', 4, 'Service Call - Smell of Natural Gas', 0.28, '2025-04-14 07:39:00', 23);
-INSERT INTO public.incidents VALUES (38, 'Fire', 6, 'Dumpster Fire', 0.32, '2025-04-14 12:18:00', 24);
-INSERT INTO public.incidents VALUES (40, 'Medical', 7, 'Life Alert', 0.32, '2025-04-14 22:45:00', 25);
-INSERT INTO public.incidents VALUES (39, 'Alarm', 7, 'Fire Alarm - Brush Fire', 0.15, '2025-04-14 15:13:00', 25);
-INSERT INTO public.incidents VALUES (47, 'Medical', 1, 'MCI - 1 transported', 0.18, '2025-04-15 19:32:00', 26);
-INSERT INTO public.incidents VALUES (46, 'Alarm', 1, 'Smoke Alarm - False Alarm', 0.18, '2025-04-15 15:38:00', 26);
+INSERT INTO public.incidents VALUES (16, 'Alarm', 6, 'Pull station - false alarm', 0.17, '2025-04-11 22:39:00', 9);
+INSERT INTO public.incidents VALUES (14, 'Alarm', 6, 'Pull station - false alarm', 0.07, '2025-04-11 18:11:00', 9);
+INSERT INTO public.incidents VALUES (11, 'Medical', 7, 'Minor MVA', 0.48, '2025-04-11 16:15:00', 10);
+INSERT INTO public.incidents VALUES (7, 'Alarm', 7, 'Fire Alarm - false alarm', 0.23, '2025-04-11 09:09:00', 10);
+INSERT INTO public.incidents VALUES (26, 'Medical', 1, 'Respiratory distress - 1 transported', 0.40, '2025-04-12 22:39:00', 11);
+INSERT INTO public.incidents VALUES (24, 'Medical', 1, 'Seizure - 1 transported', 0.20, '2025-04-12 16:18:00', 11);
+INSERT INTO public.incidents VALUES (180, 'Alarm', 1, 'Fire Alarm - General, false alarm', 0.25, '2025-05-03 11:13:00', 116);
 INSERT INTO public.incidents VALUES (45, 'Other', 1, 'Illegal Burning', 0.38, '2025-04-15 14:50:00', 26);
 INSERT INTO public.incidents VALUES (48, 'Alarm', 6, 'Pull Station - False Alarm', 0.27, '2025-04-15 19:46:00', 29);
 INSERT INTO public.incidents VALUES (43, 'Alarm', 6, 'Grass Fire - Maintenance', 0.10, '2025-04-15 13:50:00', 29);
@@ -1138,30 +1197,17 @@ INSERT INTO public.incidents VALUES (62, 'Alarm', 6, 'Smoke Alarm - False alarm'
 INSERT INTO public.incidents VALUES (60, 'Medical', 6, 'MVA w Ped - Hit and run, ped transported', 0.17, '2025-04-17 18:54:00', 39);
 INSERT INTO public.incidents VALUES (55, 'Medical', 6, 'MVA w Ped', 0.17, '2025-04-17 06:29:00', 39);
 INSERT INTO public.incidents VALUES (54, 'Fire', 6, 'Grass Fire - Maintenance', 0.12, '2025-04-17 00:54:00', 39);
-INSERT INTO public.incidents VALUES (59, 'Alarm', 7, 'Fire Alarm - General, False', 0.15, '2025-04-17 17:53:00', 40);
-INSERT INTO public.incidents VALUES (56, 'Medical', 7, 'MCI - 1 transported', 0.80, '2025-04-17 07:31:00', 40);
-INSERT INTO public.incidents VALUES (73, 'Medical', 1, 'MVA - 2 vehicle', 0.25, '2025-04-18 17:00:00', 41);
-INSERT INTO public.incidents VALUES (70, 'Medical', 1, 'MVA - Rollover w Fatality', 0.72, '2025-04-18 14:38:00', 41);
-INSERT INTO public.incidents VALUES (67, 'Other', 1, 'Service Call - Smell of Natural Gas', 0.23, '2025-04-18 14:09:00', 41);
-INSERT INTO public.incidents VALUES (71, 'Alarm', 3, 'Fire Alarm - General, no fire', 0.13, '2025-04-18 16:12:00', 42);
-INSERT INTO public.incidents VALUES (66, 'Medical', 4, 'MVA w ped', 0.35, '2025-04-18 14:03:00', 43);
-INSERT INTO public.incidents VALUES (76, 'Medical', 6, 'Lift Assist - Non Emergent', 0.30, '2025-04-18 23:01:00', 44);
-INSERT INTO public.incidents VALUES (75, 'Alarm', 6, 'Black smoke coming from wooded area', 0.13, '2025-04-18 20:33:00', 44);
-INSERT INTO public.incidents VALUES (74, 'Medical', 6, 'Chest pains', 0.13, '2025-04-18 17:47:00', 44);
-INSERT INTO public.incidents VALUES (69, 'Alarm', 6, 'Illegal Burning', 1.00, '2025-04-18 14:22:00', 44);
-INSERT INTO public.incidents VALUES (68, 'Alarm', 6, 'Smoke Alarm - Cancelled en route', 0.18, '2025-04-18 14:10:00', 44);
-INSERT INTO public.incidents VALUES (65, 'Medical', 6, 'MVA - 3 vehicle', 0.43, '2025-04-18 13:05:00', 44);
-INSERT INTO public.incidents VALUES (64, 'Medical', 6, 'MVA - 2 vehicle - AB deployment', 0.28, '2025-04-18 12:52:00', 44);
-INSERT INTO public.incidents VALUES (63, 'Alarm', 6, 'Fire Alarm - General, False', 0.23, '2025-04-18 00:25:00', 44);
-INSERT INTO public.incidents VALUES (72, 'Alarm', 7, 'Fire Alarm - Electric box smoking', 0.77, '2025-04-18 16:17:00', 45);
-INSERT INTO public.incidents VALUES (80, 'Medical', 1, 'Lift Assist - Emergent', 0.17, '2025-04-19 13:48:00', 46);
-INSERT INTO public.incidents VALUES (82, 'Medical', 4, 'MVA - 2 vehicles, minor', 0.23, '2025-04-19 17:13:00', 48);
-INSERT INTO public.incidents VALUES (79, 'Medical', 6, 'MVA - 2 vehicles, 1 transported', 0.26, '2025-04-19 12:42:00', 49);
-INSERT INTO public.incidents VALUES (78, 'Alarm', 6, 'Fire Alarm - water flow', 0.17, '2025-04-19 10:57:00', 49);
-INSERT INTO public.incidents VALUES (81, 'Medical', 7, 'Lift Assist - Non Emergent', 0.30, '2025-04-19 15:08:00', 50);
-INSERT INTO public.incidents VALUES (77, 'Medical', 7, 'Lift Assist - Emergent', 0.32, '2025-04-19 08:52:00', 50);
-INSERT INTO public.incidents VALUES (87, 'Alarm', 1, 'Smoke Alarm - False Alarm', 0.10, '2025-04-20 22:53:00', 51);
-INSERT INTO public.incidents VALUES (85, 'Medical', 1, 'Lift Assist - Non Emergent', 0.25, '2025-04-20 11:31:00', 51);
+INSERT INTO public.incidents VALUES (207, 'Medical', 6, '1 month old choking', 0.18, '2025-05-08 00:47:00', 144);
+INSERT INTO public.incidents VALUES (208, 'Medical', 1, 'MVA w entrapment - 2 transported', 0.87, '2025-05-08 02:55:00', 141);
+INSERT INTO public.incidents VALUES (209, 'Alarm', 4, 'Area Smoke - false alarm, homeless camp', 0.08, '2025-05-08 05:55:00', 143);
+INSERT INTO public.incidents VALUES (210, 'Medical', 6, 'MVA w ped - ped struck in crosswalk, 1 transported', 0.18, '2025-05-08 11:29:00', 144);
+INSERT INTO public.incidents VALUES (211, 'Alarm', 1, 'Smoke Alarm - false alarm', 0.15, '2025-05-08 17:25:00', 141);
+INSERT INTO public.incidents VALUES (212, 'Other', 4, 'Service Call - gas leak', 0.28, '2025-05-08 17:25:00', 143);
+INSERT INTO public.incidents VALUES (213, 'Medical', 1, 'Lift Assist - non emergent', 0.13, '2025-05-08 17:54:00', 141);
+INSERT INTO public.incidents VALUES (214, 'Alarm', 1, 'Fire Alarm - General, false', 0.08, '2025-05-08 18:12:00', 141);
+INSERT INTO public.incidents VALUES (215, 'Medical', 6, 'Lift Assist - emergent', 0.27, '2025-05-08 18:33:00', 144);
+INSERT INTO public.incidents VALUES (216, 'Fire', 1, 'Arson - Male subj set fire to tents at homeless camp', 0.40, '2025-05-08 22:22:00', 141);
+INSERT INTO public.incidents VALUES (205, 'Alarm', 6, 'Fire Alarm - General, false', 0.12, '2025-05-07 23:38:00', 139);
 INSERT INTO public.incidents VALUES (84, 'Alarm', 3, 'Fire Alarm - false alarm', 0.22, '2025-04-20 10:36:00', 52);
 INSERT INTO public.incidents VALUES (86, 'Fire', 6, 'Vehicle Fire - Semi-Truck with crane, fully involved', 1.23, '2025-04-20 15:46:00', 54);
 INSERT INTO public.incidents VALUES (83, 'Other', 7, 'Illegal Burning', 0.40, '2025-04-20 08:51:00', 55);
@@ -1182,6 +1228,19 @@ INSERT INTO public.incidents VALUES (111, 'Medical', 1, 'Lift Assist - non emerg
 INSERT INTO public.incidents VALUES (108, 'Other', 1, 'Gas Leak - False, skunk', 0.18, '2025-04-23 15:52:00', 66);
 INSERT INTO public.incidents VALUES (107, 'Medical', 1, 'MVA - 1 vehicle, 1 transported', 0.63, '2025-04-23 15:47:00', 66);
 INSERT INTO public.incidents VALUES (106, 'Alarm', 1, 'Smoke Alarm - False Alarm', 0.32, '2025-04-23 14:11:00', 66);
+INSERT INTO public.incidents VALUES (21, 'Fire', 1, 'Vehicle Fire', 0.50, '2025-04-12 12:42:00', 11);
+INSERT INTO public.incidents VALUES (59, 'Alarm', 7, 'Fire Alarm - General, False', 0.15, '2025-04-17 17:53:00', 40);
+INSERT INTO public.incidents VALUES (56, 'Medical', 7, 'MCI - 1 transported', 0.80, '2025-04-17 07:31:00', 40);
+INSERT INTO public.incidents VALUES (73, 'Medical', 1, 'MVA - 2 vehicle', 0.25, '2025-04-18 17:00:00', 41);
+INSERT INTO public.incidents VALUES (70, 'Medical', 1, 'MVA - Rollover w Fatality', 0.72, '2025-04-18 14:38:00', 41);
+INSERT INTO public.incidents VALUES (67, 'Other', 1, 'Service Call - Smell of Natural Gas', 0.23, '2025-04-18 14:09:00', 41);
+INSERT INTO public.incidents VALUES (71, 'Alarm', 3, 'Fire Alarm - General, no fire', 0.13, '2025-04-18 16:12:00', 42);
+INSERT INTO public.incidents VALUES (66, 'Medical', 4, 'MVA w ped', 0.35, '2025-04-18 14:03:00', 43);
+INSERT INTO public.incidents VALUES (76, 'Medical', 6, 'Lift Assist - Non Emergent', 0.30, '2025-04-18 23:01:00', 44);
+INSERT INTO public.incidents VALUES (75, 'Alarm', 6, 'Black smoke coming from wooded area', 0.13, '2025-04-18 20:33:00', 44);
+INSERT INTO public.incidents VALUES (161, 'Alarm', 3, 'Fire Alarm - waterflow, false alarm', 0.08, '2025-04-28 12:56:00', 92);
+INSERT INTO public.incidents VALUES (165, 'Alarm', 6, 'Fire Alarm - General, false alarm', 0.08, '2025-04-28 15:52:00', 94);
+INSERT INTO public.incidents VALUES (197, 'Other', 6, 'Service Call - tree fell on powerline', 0.12, '2025-05-06 18:47:00', 134);
 INSERT INTO public.incidents VALUES (104, 'Medical', 1, 'Lift Assist - Emergent, biohaz', 0.58, '2025-04-23 11:28:00', 66);
 INSERT INTO public.incidents VALUES (103, 'Medical', 1, 'MVA w Ped', 0.17, '2025-04-23 11:11:00', 66);
 INSERT INTO public.incidents VALUES (101, 'Other', 1, 'Illegal Burning', 0.04, '2025-04-23 02:50:00', 66);
@@ -1200,23 +1259,44 @@ INSERT INTO public.incidents VALUES (112, 'Alarm', 6, 'Smoke behind building - h
 INSERT INTO public.incidents VALUES (116, 'Other', 7, 'Illegal Burning', 0.18, '2025-04-24 15:05:00', 75);
 INSERT INTO public.incidents VALUES (135, 'Other', 1, 'Service Call - downed powerline on vehicle', 0.67, '2025-04-25 23:19:00', 76);
 INSERT INTO public.incidents VALUES (134, 'Medical', 1, 'Lift Assist - non emergent, biohaz', 0.55, '2025-04-25 22:54:00', 76);
-INSERT INTO public.incidents VALUES (132, 'Alarm', 1, 'Fire Alarm - General alarm, false', 0.13, '2025-04-25 20:12:00', 76);
-INSERT INTO public.incidents VALUES (131, 'Medical', 1, 'MVA w Ped - 1 transported', 0.15, '2025-04-25 19:53:00', 76);
-INSERT INTO public.incidents VALUES (130, 'Medical', 1, 'MVA vs Bicycle - 2 transported', 0.08, '2025-04-25 16:14:00', 76);
-INSERT INTO public.incidents VALUES (129, 'Medical', 1, 'Respiratory Distress - Lifenet extended ETA', 0.30, '2025-04-25 15:51:00', 76);
-INSERT INTO public.incidents VALUES (127, 'Medical', 1, 'MVA w Ped - 1 transported', 0.17, '2025-04-25 10:34:00', 76);
-INSERT INTO public.incidents VALUES (123, 'Medical', 1, 'Chest Pains - LifeNet extended ETA', 0.37, '2025-04-25 07:42:00', 76);
-INSERT INTO public.incidents VALUES (128, 'Medical', 3, 'Lift Assist - non emergent', 0.23, '2025-04-25 11:48:00', 77);
-INSERT INTO public.incidents VALUES (133, 'Alarm', 4, 'Fire Alarm - Counter sprayed with bug spray, false alarm', 0.25, '2025-04-25 21:57:00', 78);
-INSERT INTO public.incidents VALUES (126, 'Medical', 6, 'MCI - CPR in progress', 0.73, '2025-04-25 09:48:00', 79);
-INSERT INTO public.incidents VALUES (124, 'Medical', 6, 'Respiratory Distress - Lifenet extended ETA', 0.27, '2025-04-25 08:40:00', 79);
-INSERT INTO public.incidents VALUES (121, 'Alarm', 6, 'Fire Alarm - False alarm', 0.18, '2025-04-25 00:35:00', 79);
-INSERT INTO public.incidents VALUES (125, 'Medical', 7, 'Lift Assist - emergent', 0.17, '2025-04-25 09:02:00', 80);
-INSERT INTO public.incidents VALUES (122, 'Alarm', 7, 'CO Alarm - False alarm', 0.17, '2025-04-25 02:26:00', 80);
-INSERT INTO public.incidents VALUES (139, 'Medical', 1, 'Lift Assist - non emergent, coroner req', 0.52, '2025-04-26 13:07:00', 81);
-INSERT INTO public.incidents VALUES (138, 'Medical', 1, 'Lift Assist - non emergent', 0.15, '2025-04-26 12:45:00', 81);
+INSERT INTO public.incidents VALUES (37, 'Medical', 1, 'Non Emergent - Lift Assist', 0.18, '2025-04-14 09:28:00', 21);
+INSERT INTO public.incidents VALUES (35, 'Medical', 1, 'Non Emergent Lift Assist', 0.52, '2025-04-14 02:11:00', 21);
+INSERT INTO public.incidents VALUES (41, 'Medical', 3, 'CPR - DOA', 0.13, '2025-04-14 22:57:00', 22);
+INSERT INTO public.incidents VALUES (36, 'Other', 4, 'Service Call - Smell of Natural Gas', 0.28, '2025-04-14 07:39:00', 23);
+INSERT INTO public.incidents VALUES (38, 'Fire', 6, 'Dumpster Fire', 0.32, '2025-04-14 12:18:00', 24);
+INSERT INTO public.incidents VALUES (40, 'Medical', 7, 'Life Alert', 0.32, '2025-04-14 22:45:00', 25);
+INSERT INTO public.incidents VALUES (39, 'Alarm', 7, 'Fire Alarm - Brush Fire', 0.15, '2025-04-14 15:13:00', 25);
+INSERT INTO public.incidents VALUES (47, 'Medical', 1, 'MCI - 1 transported', 0.18, '2025-04-15 19:32:00', 26);
+INSERT INTO public.incidents VALUES (46, 'Alarm', 1, 'Smoke Alarm - False Alarm', 0.18, '2025-04-15 15:38:00', 26);
 INSERT INTO public.incidents VALUES (137, 'Medical', 1, 'Lift Assist - non emergent, biohaz', 1.28, '2025-04-26 11:40:00', 81);
 INSERT INTO public.incidents VALUES (146, 'Medical', 3, 'Chest Pains', 0.23, '2025-04-26 19:42:00', 82);
+INSERT INTO public.incidents VALUES (5, 'Medical', 1, 'Overdose - 1 transported', 0.09, '2025-04-10 17:00:00', 1);
+INSERT INTO public.incidents VALUES (4, 'Alarm', 3, 'Trash Fire - unauthorized', 0.07, '2025-04-10 15:00:00', 2);
+INSERT INTO public.incidents VALUES (2, 'Alarm', 6, 'Sprinkler Alarm - False', 0.23, '2025-04-10 10:16:00', 4);
+INSERT INTO public.incidents VALUES (3, 'Medical', 6, 'Chest pains - 1 transported', 0.20, '2025-04-10 12:52:00', 4);
+INSERT INTO public.incidents VALUES (1, 'Alarm', 7, 'School smoke detector - no fire', 0.07, '2025-04-10 08:57:00', 5);
+INSERT INTO public.incidents VALUES (15, 'Medical', 1, 'Respiratory distress - 1 transported', 0.33, '2025-04-11 19:36:00', 6);
+INSERT INTO public.incidents VALUES (13, 'Alarm', 1, 'Heavy Smoke in the area - false alarm', 0.25, '2025-04-11 17:04:00', 6);
+INSERT INTO public.incidents VALUES (12, 'Medical', 1, 'Female chest pains - 1 transported', 0.13, '2025-04-11 17:00:00', 6);
+INSERT INTO public.incidents VALUES (8, 'Medical', 1, 'Wrists cut - 1 transported', 0.22, '2025-04-11 09:28:00', 6);
+INSERT INTO public.incidents VALUES (10, 'Alarm', 3, 'Smoke detector activation - no fire', 0.08, '2025-04-11 15:49:00', 7);
+INSERT INTO public.incidents VALUES (9, 'Alarm', 4, 'Fire Alarm - false alarm', 0.08, '2025-04-11 11:16:00', 8);
+INSERT INTO public.incidents VALUES (6, 'Medical', 4, 'Rollover Accident - 4 transported', 0.75, '2025-04-11 06:13:00', 8);
+INSERT INTO public.incidents VALUES (74, 'Medical', 6, 'Chest pains', 0.13, '2025-04-18 17:47:00', 44);
+INSERT INTO public.incidents VALUES (69, 'Alarm', 6, 'Illegal Burning', 1.00, '2025-04-18 14:22:00', 44);
+INSERT INTO public.incidents VALUES (68, 'Alarm', 6, 'Smoke Alarm - Cancelled en route', 0.18, '2025-04-18 14:10:00', 44);
+INSERT INTO public.incidents VALUES (65, 'Medical', 6, 'MVA - 3 vehicle', 0.43, '2025-04-18 13:05:00', 44);
+INSERT INTO public.incidents VALUES (64, 'Medical', 6, 'MVA - 2 vehicle - AB deployment', 0.28, '2025-04-18 12:52:00', 44);
+INSERT INTO public.incidents VALUES (63, 'Alarm', 6, 'Fire Alarm - General, False', 0.23, '2025-04-18 00:25:00', 44);
+INSERT INTO public.incidents VALUES (72, 'Alarm', 7, 'Fire Alarm - Electric box smoking', 0.77, '2025-04-18 16:17:00', 45);
+INSERT INTO public.incidents VALUES (80, 'Medical', 1, 'Lift Assist - Emergent', 0.17, '2025-04-19 13:48:00', 46);
+INSERT INTO public.incidents VALUES (82, 'Medical', 4, 'MVA - 2 vehicles, minor', 0.23, '2025-04-19 17:13:00', 48);
+INSERT INTO public.incidents VALUES (79, 'Medical', 6, 'MVA - 2 vehicles, 1 transported', 0.26, '2025-04-19 12:42:00', 49);
+INSERT INTO public.incidents VALUES (78, 'Alarm', 6, 'Fire Alarm - water flow', 0.17, '2025-04-19 10:57:00', 49);
+INSERT INTO public.incidents VALUES (81, 'Medical', 7, 'Lift Assist - Non Emergent', 0.30, '2025-04-19 15:08:00', 50);
+INSERT INTO public.incidents VALUES (77, 'Medical', 7, 'Lift Assist - Emergent', 0.32, '2025-04-19 08:52:00', 50);
+INSERT INTO public.incidents VALUES (87, 'Alarm', 1, 'Smoke Alarm - False Alarm', 0.10, '2025-04-20 22:53:00', 51);
+INSERT INTO public.incidents VALUES (85, 'Medical', 1, 'Lift Assist - Non Emergent', 0.25, '2025-04-20 11:31:00', 51);
 INSERT INTO public.incidents VALUES (142, 'Alarm', 4, 'Smoke Alarm - false', 0.10, '2025-04-26 14:46:00', 83);
 INSERT INTO public.incidents VALUES (140, 'Fire', 4, 'Vehicle Fire - EB lane, engine comp involved', 0.25, '2025-04-26 13:12:00', 83);
 INSERT INTO public.incidents VALUES (145, 'Alarm', 6, 'Fire Alarm - pull station, false', 0.18, '2025-04-26 19:05:00', 84);
@@ -1239,8 +1319,6 @@ INSERT INTO public.incidents VALUES (162, 'Other', 1, 'Service Call - tree and p
 INSERT INTO public.incidents VALUES (160, 'Other', 1, 'Illegal Burning - homeless camp', 0.25, '2025-04-28 10:40:00', 91);
 INSERT INTO public.incidents VALUES (159, 'Alarm', 1, 'Fire Alarm - General, false alarm', 0.27, '2025-04-28 09:58:00', 91);
 INSERT INTO public.incidents VALUES (158, 'Alarm', 1, 'Fire Alarm - General, false alarm', 0.32, '2025-04-28 07:40:00', 91);
-INSERT INTO public.incidents VALUES (161, 'Alarm', 3, 'Fire Alarm - waterflow, false alarm', 0.08, '2025-04-28 12:56:00', 92);
-INSERT INTO public.incidents VALUES (165, 'Alarm', 6, 'Fire Alarm - General, false alarm', 0.08, '2025-04-28 15:52:00', 94);
 INSERT INTO public.incidents VALUES (164, 'Alarm', 6, 'Fire Alarm - false alarm', 0.20, '2025-04-28 15:33:00', 94);
 INSERT INTO public.incidents VALUES (163, 'Alarm', 6, 'Fire Alarm - waterflow, sprinkler busted', 0.97, '2025-04-28 15:18:00', 94);
 INSERT INTO public.incidents VALUES (157, 'Alarm', 6, 'Vehicle Fire - engine overheating, false', 0.07, '2025-04-28 07:18:00', 94);
@@ -1254,7 +1332,6 @@ INSERT INTO public.incidents VALUES (169, 'Fire', 6, 'Tree fire - caused from po
 INSERT INTO public.incidents VALUES (175, 'Medical', 1, 'Infant choking', 0.15, '2025-05-01 05:33:00', 106);
 INSERT INTO public.incidents VALUES (174, 'Medical', 6, 'Lift Assist - non emergent', 0.18, '2025-05-01 04:31:00', 109);
 INSERT INTO public.incidents VALUES (177, 'Fire', 1, 'Transformer on Fire', 0.13, '2025-05-02 11:01:00', 111);
-INSERT INTO public.incidents VALUES (180, 'Alarm', 1, 'Fire Alarm - General, false alarm', 0.25, '2025-05-03 11:13:00', 116);
 INSERT INTO public.incidents VALUES (178, 'Other', 4, 'Service Call - Fluid clean up from MVA', 0.17, '2025-05-02 16:49:00', 113);
 INSERT INTO public.incidents VALUES (176, 'Medical', 6, 'Assault - Child hit with bat from mother and unable to breathe', 0.13, '2025-05-02 07:26:00', 114);
 INSERT INTO public.incidents VALUES (182, 'Other', 3, 'Service Call - Tree fell on powerline', 1.03, '2025-05-03 16:36:00', 117);
@@ -1277,7 +1354,6 @@ INSERT INTO public.incidents VALUES (192, 'Other', 3, 'Illegal burning', 0.08, '
 INSERT INTO public.incidents VALUES (194, 'Other', 4, 'Service Call', 0.22, '2025-05-06 10:20:00', 133);
 INSERT INTO public.incidents VALUES (200, 'Other', 6, 'Service Call - tree fell on powerline', 0.12, '2025-05-06 09:05:00', 134);
 INSERT INTO public.incidents VALUES (198, 'Medical', 6, 'Lift Assist - non emergent', 0.43, '2025-05-06 19:03:00', 134);
-INSERT INTO public.incidents VALUES (197, 'Other', 6, 'Service Call - tree fell on powerline', 0.12, '2025-05-06 18:47:00', 134);
 INSERT INTO public.incidents VALUES (193, 'Alarm', 6, 'Fire Alarm - general, false alarm', 0.12, '2025-05-06 08:59:00', 134);
 INSERT INTO public.incidents VALUES (202, 'Alarm', 3, 'Fire Alarm - General, false', 0.13, '2025-05-07 05:36:00', 137);
 INSERT INTO public.incidents VALUES (204, 'Medical', 4, 'Unresponsive female - 1 transported', 0.21, '2025-05-07 13:01:00', 138);
@@ -1717,6 +1793,74 @@ INSERT INTO public.incidentunits VALUES (202, 1);
 INSERT INTO public.incidentunits VALUES (202, 5);
 INSERT INTO public.incidentunits VALUES (203, 4);
 INSERT INTO public.incidentunits VALUES (204, 4);
+INSERT INTO public.incidentunits VALUES (205, 121);
+INSERT INTO public.incidentunits VALUES (205, 6);
+INSERT INTO public.incidentunits VALUES (205, 4);
+INSERT INTO public.incidentunits VALUES (205, 10);
+INSERT INTO public.incidentunits VALUES (206, 1);
+INSERT INTO public.incidentunits VALUES (207, 6);
+INSERT INTO public.incidentunits VALUES (208, 1);
+INSERT INTO public.incidentunits VALUES (208, 12);
+INSERT INTO public.incidentunits VALUES (209, 121);
+INSERT INTO public.incidentunits VALUES (209, 4);
+INSERT INTO public.incidentunits VALUES (209, 6);
+INSERT INTO public.incidentunits VALUES (209, 2);
+INSERT INTO public.incidentunits VALUES (210, 6);
+INSERT INTO public.incidentunits VALUES (210, 2);
+INSERT INTO public.incidentunits VALUES (211, 121);
+INSERT INTO public.incidentunits VALUES (211, 1);
+INSERT INTO public.incidentunits VALUES (211, 3);
+INSERT INTO public.incidentunits VALUES (211, 5);
+INSERT INTO public.incidentunits VALUES (212, 4);
+INSERT INTO public.incidentunits VALUES (213, 1);
+INSERT INTO public.incidentunits VALUES (214, 121);
+INSERT INTO public.incidentunits VALUES (214, 1);
+INSERT INTO public.incidentunits VALUES (214, 7);
+INSERT INTO public.incidentunits VALUES (214, 5);
+INSERT INTO public.incidentunits VALUES (215, 6);
+INSERT INTO public.incidentunits VALUES (216, 121);
+INSERT INTO public.incidentunits VALUES (216, 1);
+INSERT INTO public.incidentunits VALUES (216, 3);
+INSERT INTO public.incidentunits VALUES (216, 5);
+INSERT INTO public.incidentunits VALUES (217, 7);
+INSERT INTO public.incidentunits VALUES (218, 121);
+INSERT INTO public.incidentunits VALUES (218, 1);
+INSERT INTO public.incidentunits VALUES (218, 3);
+INSERT INTO public.incidentunits VALUES (218, 5);
+INSERT INTO public.incidentunits VALUES (219, 1);
+INSERT INTO public.incidentunits VALUES (220, 121);
+INSERT INTO public.incidentunits VALUES (220, 1);
+INSERT INTO public.incidentunits VALUES (220, 3);
+INSERT INTO public.incidentunits VALUES (220, 5);
+INSERT INTO public.incidentunits VALUES (221, 1);
+INSERT INTO public.incidentunits VALUES (222, 121);
+INSERT INTO public.incidentunits VALUES (222, 6);
+INSERT INTO public.incidentunits VALUES (222, 4);
+INSERT INTO public.incidentunits VALUES (222, 10);
+INSERT INTO public.incidentunits VALUES (223, 121);
+INSERT INTO public.incidentunits VALUES (223, 3);
+INSERT INTO public.incidentunits VALUES (223, 1);
+INSERT INTO public.incidentunits VALUES (223, 5);
+INSERT INTO public.incidentunits VALUES (224, 7);
+INSERT INTO public.incidentunits VALUES (225, 6);
+INSERT INTO public.incidentunits VALUES (225, 2);
+INSERT INTO public.incidentunits VALUES (226, 121);
+INSERT INTO public.incidentunits VALUES (226, 6);
+INSERT INTO public.incidentunits VALUES (226, 4);
+INSERT INTO public.incidentunits VALUES (226, 2);
+INSERT INTO public.incidentunits VALUES (227, 6);
+INSERT INTO public.incidentunits VALUES (228, 3);
+INSERT INTO public.incidentunits VALUES (229, 6);
+INSERT INTO public.incidentunits VALUES (230, 121);
+INSERT INTO public.incidentunits VALUES (230, 1);
+INSERT INTO public.incidentunits VALUES (230, 3);
+INSERT INTO public.incidentunits VALUES (230, 5);
+INSERT INTO public.incidentunits VALUES (231, 121);
+INSERT INTO public.incidentunits VALUES (231, 1);
+INSERT INTO public.incidentunits VALUES (231, 3);
+INSERT INTO public.incidentunits VALUES (231, 5);
+INSERT INTO public.incidentunits VALUES (232, 6);
+INSERT INTO public.incidentunits VALUES (232, 2);
 
 
 --
@@ -1865,6 +2009,21 @@ INSERT INTO public.shifts VALUES (137, 5, '2025-05-07', 24);
 INSERT INTO public.shifts VALUES (138, 8, '2025-05-07', 24);
 INSERT INTO public.shifts VALUES (139, 11, '2025-05-07', 24);
 INSERT INTO public.shifts VALUES (140, 14, '2025-05-07', 24);
+INSERT INTO public.shifts VALUES (141, 3, '2025-05-08', 24);
+INSERT INTO public.shifts VALUES (142, 6, '2025-05-08', 24);
+INSERT INTO public.shifts VALUES (143, 9, '2025-05-08', 24);
+INSERT INTO public.shifts VALUES (144, 12, '2025-05-08', 24);
+INSERT INTO public.shifts VALUES (145, 15, '2025-05-09', 24);
+INSERT INTO public.shifts VALUES (146, 1, '2025-05-09', 24);
+INSERT INTO public.shifts VALUES (147, 4, '2025-05-09', 24);
+INSERT INTO public.shifts VALUES (148, 7, '2025-05-09', 24);
+INSERT INTO public.shifts VALUES (149, 10, '2025-05-09', 24);
+INSERT INTO public.shifts VALUES (150, 13, '2025-05-09', 24);
+INSERT INTO public.shifts VALUES (151, 2, '2025-05-10', 24);
+INSERT INTO public.shifts VALUES (152, 5, '2025-05-10', 24);
+INSERT INTO public.shifts VALUES (153, 8, '2025-05-10', 24);
+INSERT INTO public.shifts VALUES (154, 11, '2025-05-10', 24);
+INSERT INTO public.shifts VALUES (155, 14, '2025-05-10', 24);
 
 
 --
@@ -1920,16 +2079,16 @@ INSERT INTO public.units VALUES (121, '121', 'Command', 1);
 INSERT INTO public.units VALUES (101, '101', 'Command', 1);
 INSERT INTO public.units VALUES (102, '102', 'Command', 1);
 INSERT INTO public.units VALUES (12, 'Rescue 12', 'Rescue', 1);
-INSERT INTO public.units VALUES (2, 'Rescue 2', 'Rescue', 4);
 INSERT INTO public.units VALUES (14, 'Brush Truck 14', 'Brush', 1);
 INSERT INTO public.units VALUES (401, '401', 'Command', 1);
 INSERT INTO public.units VALUES (402, '402', 'Command', 1);
 INSERT INTO public.units VALUES (301, '301', 'Command', 1);
 INSERT INTO public.units VALUES (302, '302', 'Command', 1);
+INSERT INTO public.units VALUES (2, 'Rescue 2', 'Rescue', 6);
 
 
 --
--- TOC entry 4980 (class 0 OID 0)
+-- TOC entry 4979 (class 0 OID 0)
 -- Dependencies: 219
 -- Name: firefighters_firefighter_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -1938,25 +2097,25 @@ SELECT pg_catalog.setval('public.firefighters_firefighter_id_seq', 76, true);
 
 
 --
--- TOC entry 4981 (class 0 OID 0)
+-- TOC entry 4980 (class 0 OID 0)
 -- Dependencies: 222
 -- Name: incidents_incident_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.incidents_incident_id_seq', 204, true);
+SELECT pg_catalog.setval('public.incidents_incident_id_seq', 232, true);
 
 
 --
--- TOC entry 4982 (class 0 OID 0)
+-- TOC entry 4981 (class 0 OID 0)
 -- Dependencies: 227
 -- Name: shifts_shift_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.shifts_shift_id_seq', 140, true);
+SELECT pg_catalog.setval('public.shifts_shift_id_seq', 155, true);
 
 
 --
--- TOC entry 4983 (class 0 OID 0)
+-- TOC entry 4982 (class 0 OID 0)
 -- Dependencies: 225
 -- Name: stationshifts_station_shift_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -2142,7 +2301,7 @@ ALTER TABLE ONLY public.units
     ADD CONSTRAINT units_station_id_fkey FOREIGN KEY (station_id) REFERENCES public.stations(station_id);
 
 
--- Completed on 2025-05-07 22:12:16
+-- Completed on 2025-05-10 23:13:48
 
 --
 -- PostgreSQL database dump complete
