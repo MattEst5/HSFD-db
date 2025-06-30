@@ -1,42 +1,73 @@
-🔥 Overview
-This is a relational PostgreSQL database designed to simulate real-world fire department operations, including incidents, firefighter staffing, shifts, stations, and unit deployment. Originally built from scratch for hands-on learning, this project has evolved through multiple schema refactors and now reflects industry-standard normalization, indexing, and relational integrity.
+# 🚒 HSFD-db: Hot Springs Fire Department Database
 
-🧱 Schema Highlights
-Firefighters: 75 personnel with shift assignments and tracked work hours
+## 🔥 Overview
 
-Stations: 7 locations serving the Hot Springs area
+This is a **relational PostgreSQL database and Python CLI toolkit** designed to simulate real-world fire department operations. Built from scratch for deep learning and career transition, this project includes robust data structures, automation tools, and realistic incident and staffing data.
 
-Units: Engines, ladders, rescues, etc. assigned to stations
+Originally started in April 2025 as a SQL learning sandbox, **HSFD-db has evolved into a professional-grade database** with CLI tools for daily operational logging, reflecting true industry practices.
 
-Incidents: Real incident data from April 10 2025 onward, including call time, station, and linked responders
+---
 
-Shifts System: Fully normalized structure using stationshifts, shifts, and firefightershifts for flexible time tracking and analysis
+## 🧱 Schema Highlights
 
-🛠️ Recent Improvements
-Full schema normalization (v3.0 – May 2025)
+- **Firefighters:**  
+  75 personnel with shift assignments and tracked work hours
 
-New update_incident_shifts() function to auto-assign shifts based on incident call time
+- **Stations:**  
+  5 fire stations serving the Hot Springs area
 
-Schema now reflects true many-to-many relationships between firefighters and shifts
+- **Units:**  
+  Engines, ladders, rescues, and specialized apparatus assigned to stations
 
-Data integrity enforced with foreign keys and composite primary keys
+- **Incidents:**  
+  Real incident data from April 10, 2025 onward, including call times, types, station assignments, and responding units
 
-⚙️ SQL Tools & Techniques Used
-Subqueries & Window Functions
+- **Shift System:**  
+  Fully normalized schema with `stationshifts`, `shifts`, and `firefightershifts` tables enabling flexible and scalable staffing management
 
-Joins & Aggregations
+---
 
-User-defined functions
+## 🛠️ Tools & Recent Improvements
 
-Data backups & restoration
+### ✅ **CLI Automation Tools (2025-06)**
+- **Incident Logger:**  
+  Python tool to insert incidents with prompts, data validation, and linked units for each call
 
-Schema refactoring and optimization
+- **Shift Logger:**  
+  Automates daily shift logging with dynamic firefighter assignments based on static shift rosters
 
-📈 What's Next
-Building out views for analytical dashboards
+### ✅ **Database Enhancements**
+- Full schema normalization (**v3.0 – May 2025**)
+- `update_incident_shifts()` function to auto-assign shifts based on incident call time
+- Data integrity enforced via **foreign keys and composite primary keys**
+- Improved daily workflow with CLI tools to support future GUI and full-stack integration
 
-Power BI integration
+---
 
-Adding incident daily
+## ⚙️ SQL & Python Skills Demonstrated
 
-Public-facing queries for showcasing skills
+- Advanced **JOINs**, **aggregations**, subqueries, and window functions
+- User-defined functions and PL/pgSQL procedural logic
+- Real-world CLI tools with Python, psycopg2, and dynamic user input handling
+- Git version control, branching, and conflict resolution
+
+---
+
+## 🚀 What's Next
+
+- Continuing structured Python learning to enable **Flask web development** for Firehouse RMS
+- Building GUIs for daily data entry and operational dashboards
+- Developing the long-term **Firehouse RMS** software vision for fire department data management, training, and operations
+
+---
+
+## 💡 Project Purpose
+
+This database and toolset were created as part of my personal journey from a firefighter to a data and backend development professional, with the ultimate goal of building software to improve public safety operations and data management efficiency.
+
+---
+
+🔗 **Connect & Follow Along:**  
+- [GitHub: MattEst5](https://github.com/MattEst5)
+
+---
