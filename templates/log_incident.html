@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Log New Incident</title>
+</head>
+<body>
+    <h1>Log New Incident</h1>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <p style="color: {% if category == 'success' %}green{% else %}red{% endif %};">
+                    {{ message }}
+                </p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+        <label>Incident Type:</label><br>
+        <input type="text" name="incident_type"><br><br>
+
+        <label>Station ID:</label><br>
+        <input type="text" name="station_id"><br><br>
+
+        <label>Dispatch Notes:</label><br>
+        <input type="text" name="dspch_notes"><br><br>
+
+        <label>Actions Taken:</label><br>
+        <input type="text" name="actions_taken"><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
