@@ -1,19 +1,14 @@
 import psycopg2
 from datetime import datetime, timedelta
-from dotenv import load_dotenv
+from dotenv import load_dotenv, find_dotenv
 import os
+from rich.console import Console, Group
+from rich.panel import Panel
+from rich.prompt import Prompt
+from rich.align import Align
 
-env_file = ".env"
-
-if os.getenv("ENV") == "TEST":
-    env_file = ".env.test"
-
-load_dotenv(dotenv_path=env_file)
-
-print(f"Loaded DB_HOST: {os.getenv('DB_HOST')}")
-print(f"Loaded DB_NAME: {os.getenv('DB_NAME')}")
-print(f"Loaded DB_USER: {os.getenv('DB_USER')}")
-print(f"Loaded DB_PASSWORD: {os.getenv('DB_PASSWORD')}")
+console = Console()
+load_dotenv(find_dotenv())
 
 class Incident:
     def __init__(self, incident_type, station_id, dspch_notes, actions_taken, call_time, enrt_time, arrival_time, completed_time):
@@ -80,7 +75,7 @@ class Incident:
         ))
         incident_id = cur.fetchone()[0]
         conn.commit()
-        cur.close
+        cur.close()
         print(f"✅ Incident inserted successfully with ID {incident_id}.")
         return incident_id
 
@@ -184,7 +179,19 @@ def get_last_incident(conn):
     cur.execute(insert_query)
     last_incident = cur.fetchone()
     cur.close()
-    return last_incident    
+    return last_incident  
+
+def last_20(conn):
+    cur = conn.cursor()
+    insert_query = """
+        SELECT incident_id, incident_type, station_id, dspch_notes, actions_taken, call_time, duration_hours, response_time
+        FROM incidents
+        ORDER BY incident_id DESC
+        LIMIT 20    
+    """
+    cur.execute(insert_query)
+    call_summary = cur.fetchall()
+    return call_summary  
 
 #-----------------------------------------------------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------------------------------------------
@@ -282,7 +289,7 @@ def log_new_incident(conn):
                 print("❌ Entry discarded. Restarting entry.")
                 continue
 
-            another = input("Add another incident? (y/n): ")
+            another = input("\nAdd another incident? (y/n): ")
             if another.lower() != 'y':
                 break
 
@@ -320,24 +327,52 @@ def log_new_shift(conn):
 def check_last_incident(conn):
     try:
         conn = connect()
-
         last_incident = get_last_incident(conn)
+
+        console.clear()
+
         if last_incident:
-            print("\n---------------------------")
-            print("📝 Last Incident Logged 📝")
-            print(f"Incident ID: {last_incident[0]}")
-            print(f"Type: {last_incident[1]}")
-            print(f"Station ID: {last_incident[2]}")
-            print(f"Description: {last_incident[3]}")
-            print(f"Call_time: {last_incident[5]}")
-            print("---------------------------")
+            header = Align.center("[bold red]🔥 Last Incident Logged 🔥[/bold red]")
+            details = (
+                f"[bold cyan]Incident ID:[/bold cyan] {last_incident[0]}\n"
+                f"[bold cyan]Type:[/bold cyan] {last_incident[1]}\n"
+                f"[bold cyan]Station ID:[/bold cyan] {last_incident[2]}\n"
+                f"[bold cyan]Description:[/bold cyan] {last_incident[3]}\n"
+                f"[bold cyan]Call Time:[/bold cyan] {last_incident[5]}"
+            )
+
+            panel_content = Group(
+                header,
+                details
+            )
+
+            check_panel = Panel.fit(
+                panel_content,
+                title="[bold yellow]🔥 FireHouse 🔥[/bold yellow]",
+                border_style="bright_red"
+            )
+
+            console.print(check_panel)
         else:
-            print("No incidents found.")
+            console.print(Panel("[bold red]No incidents found.[/bold red]", title="⚠️ Alert", border_style="red"))
 
         conn.close()
 
     except Exception as e:
-        print("Something went wrong.")
+        console.print("[bold red]❌ Something went wrong.[/bold red]")
+        console.print(f"[italic]{e}[/italic]")
+
+def incident_summary(conn):
+    try:
+        print("Connected to HSFD.db")
+
+        inc_summary = last_20(conn)
+
+        for incident in inc_summary:
+            print(f"ID: {incident[0]} Type: {incident[1]}, Station: {incident[2]}, Dispatch: {incident[3]}, Actions: {incident[4]}, Call Time: {incident[5]}, Duration: {incident[6]}, Response Time: {incident[7]}")
+
+    except Exception as e:
+        print("Somthing went wrong")
         print(e)
 
 #-----------------------------------------------------------------------------------------------------------------------------
@@ -347,13 +382,30 @@ def main_menu():
     conn = connect()
 
     while True:
-        print("\n🔥 Main Menu 🔥")
-        print("1. Log new incident")
-        print("2. Log new shift")
-        print("3. Check last incident")
-        print("4. Exit")
+        header = Align.center("[bold red]🔥 HSFD Main Menu 🔥[/bold red]")
 
-        choice = input("Select an option (1-4): ")
+        menu_options = """
+[cyan]1.[/cyan] 🚨 Log new [bold]incident[/bold]
+[cyan]2.[/cyan] 🕒 Log new [bold]shift[/bold]
+[cyan]3.[/cyan] 🔍 Check [bold]last incident[/bold]
+[cyan]4.[/cyan] 📔 [bold]Incident Summary[/bold]
+[cyan]5.[/cyan] ❌ [bold red]Exit[/bold red]
+        """
+
+        panel_content = Group(
+            header,
+            menu_options
+        )
+
+        menu_panel = Panel.fit(
+            panel_content,
+            title="[bold yellow]🔥 FireHouse 🔥[/bold yellow]",
+            border_style="bright_red"
+        )
+
+        console.print(menu_panel)
+
+        choice = Prompt.ask("[bold green]Select an option (1-5)[/bold green]")
 
         if choice == "1":
             log_new_incident(conn)
@@ -362,11 +414,13 @@ def main_menu():
         elif choice == "3":
             check_last_incident(conn)
         elif choice == "4":
-            print("Goodbye!")
+            incident_summary(conn)    
+        elif choice == "5":
+            console.print("[bold red]Goodbye![/bold red] 👋")
             conn.close()
             break
         else:
-            print("❌ Invalid choice. Please enter 1-4.")
+            console.print("[bold red]❌ Invalid choice. Please enter 1-5.[/bold red]")
 
 
 if __name__ == "__main__":
