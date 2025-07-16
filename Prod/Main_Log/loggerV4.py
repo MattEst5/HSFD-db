@@ -6,6 +6,8 @@ from rich.console import Console, Group
 from rich.panel import Panel
 from rich.prompt import Prompt
 from rich.align import Align
+from rich.table import Table
+from rich.style import Style
 
 console = Console()
 load_dotenv(find_dotenv())
@@ -198,48 +200,48 @@ def last_20(conn):
 
 def log_new_incident(conn):
     try:
-        print("🚨Incident Logger🚨")
-        print("Connected to HSFD.db")
+        console.print("🚨 [bold red]Incident Logger[/bold red] 🚨")
+        console.print("[cyan]Connected to HSFD.db[/cyan]")
 
         while True:
-            incident_type = input("Enter Incident Type (or type 'cancel' to exit): ")
+            incident_type = Prompt.ask("Enter [bold red]Incident Type[/bold red] (or type 'cancel' to exit)")
             if incident_type.lower() == 'cancel':
-                print("❌ Logging cancelled")
+                console.print("[bold red]❌ Logging cancelled[/bold red]")
                 return
             
-            station_id = input("Enter Station ID (or type 'cancel' to exit): ")
+            station_id = Prompt.ask("Enter [bold red]Station ID[/bold red] (or type 'cancel' to exit)")
             if station_id.lower() == 'cancel':
-                print("❌ Logging cancelled")
+                console.print("[bold red]❌ Logging cancelled[/bold red]")
                 return
             
-            dspch_notes = input("Enter Dispatch Notes (or type 'cancel' to exit): ")
+            dspch_notes = Prompt.ask("Enter [bold red]Dispatch Notes[/bold red] (or type 'cancel' to exit)")
             if dspch_notes.lower() == 'cancel':
-                print("❌ Logging cancelled")
+                console.print("[bold red]❌ Logging cancelled[/bold red]")
                 return
             
-            actions_taken = input("Enter actions taken (or type 'cancel' to exit): ")
+            actions_taken = Prompt.ask("Enter [bold red]Actions Taken[/bold red] (or type 'cancel' to exit)")
             if actions_taken.lower() == 'cancel':
-                print("❌ Logging cancelled")
+                console.print("[bold red]❌ Logging cancelled[/bold red]")
                 return
             
-            call_time = input("Enter call time(YYYY-MM-DD HH:MM:SS) (or type 'cancel' to exit): ")
+            call_time = Prompt.ask("Enter [bold red]Call Time (YYYY-MM-DD HH:MM:SS)[/bold red] (or type 'cancel' to exit)")
             if call_time.lower() == 'cancel':
-                print("❌ Logging cancelled")
+                console.print("[bold red]❌ Logging cancelled[/bold red]")
                 return
             
-            enrt_time = input("Enter en route time(YYYY-MM-DD HH:MM:SS) (or type 'cancel' to exit): ")
+            enrt_time = Prompt.ask("Enter [bold red]Time Out (YYYY-MM-DD HH:MM:SS)[/bold red] (or type 'cancel' to exit)")
             if enrt_time.lower() == 'cancel':
-                print("❌ Logging cancelled")
+                console.print("[bold red]❌ Logging cancelled[/bold red]")
                 return
             
-            arrival_time = input("Enter arrival time(YYYY-MM-DD HH:MM:SS) (or type 'cancel' to exit): ")
+            arrival_time = Prompt.ask("Enter [bold red]Arrival Time (YYYY-MM-DD HH:MM:SS)[/bold red] (or type 'cancel' to exit)")
             if arrival_time.lower() == 'cancel':
-                print("❌ Logging cancelled")
+                console.print("[bold red]❌ Logging cancelled[/bold red]")
                 return
             
-            completed_time = input("Enter completed time(YYYY-MM-DD HH:MM:SS) (or type 'cancel' to exit): ")
+            completed_time = Prompt.ask("Enter [bold red]Time Completed (YYYY-MM-DD HH:MM:SS)[/bold red] (or type 'cancel' to exit)")
             if completed_time.lower() == 'cancel':
-                print("❌ Logging cancelled")
+                console.print("[bold red]❌ Logging cancelled[/bold red]")
                 return
             
             incident = Incident(
@@ -254,19 +256,22 @@ def log_new_incident(conn):
             )
 
             #Display review summary
-            print("\n📝 Please review your entry:")
-            print(f"Incident Type: {incident.incident_type}")
-            print(f"Station ID: {incident.station_id}")
-            print(f"Dispatch Notes: {incident.dspch_notes}")
-            print(f"Actions Taken: {incident.actions_taken}")
-            print(f"Call Time: {incident.call_time}")
-            print(f"En Route: {incident.enrt_time}")
-            print(f"Arrival Time: {incident.arrival_time}")
-            print(f"Completed Time: {incident.completed_time}")
-            print(f"Duration Hours: {incident.duration_hours}")
-            print(f"Response Time: {incident.response_time}")
+            review = Group(
+            f"[bold cyan]Incident Type:[/bold cyan] {incident.incident_type}",
+            f"[bold cyan]Station ID:[/bold cyan] {incident.station_id}",
+            f"[bold cyan]Dispatch Notes:[/bold cyan] {incident.dspch_notes}",
+            f"[bold cyan]Actions Taken:[/bold cyan] {incident.actions_taken}",
+            f"[bold cyan]Call Time:[/bold cyan] {incident.call_time}",
+            f"[bold cyan]En Route:[/bold cyan] {incident.enrt_time}",
+            f"[bold cyan]Arrival Time:[/bold cyan] {incident.arrival_time}",
+            f"[bold cyan]Completed Time:[/bold cyan] {incident.completed_time}",
+            f"[bold cyan]Duration (hrs):[/bold cyan] {incident.duration_hours}",
+            f"[bold cyan]Response Time (min):[/bold cyan] {incident.response_time}",
+            )
 
-            choice = input("\nConfirm? (y/n/cancel): ").lower()
+            console.print(Panel.fit(review, title="[bold yellow]📝 Review Incident Entry[/bold yellow]", border_style="bright_red"))
+
+            choice = Prompt.ask("[bold green]Confirm? (y/n/cancel)[/bold green]").lower()
 
             if choice == 'y':
                 incident_id = incident.insert_to_db(conn)
@@ -279,7 +284,7 @@ def log_new_incident(conn):
                         break
                     insert_incident_unit(conn, incident_id, unit_id)
 
-                print("✅ All units entered successfully.")
+                console.print("✅ [bold green] All units entered successfully.[bold green]")
 
             elif choice == 'cancel':
                 print("❌ Logging cancelled")
@@ -293,8 +298,7 @@ def log_new_incident(conn):
             if another.lower() != 'y':
                 break
 
-        conn.close()
-        print("Connection closed. Goodbye!")
+        print("Goodbye! 👋")
 
     except Exception as e:
         print("Something went wrong:")
@@ -362,18 +366,56 @@ def check_last_incident(conn):
         console.print("[bold red]❌ Something went wrong.[/bold red]")
         console.print(f"[italic]{e}[/italic]")
 
+#Rich Table integration; 2nd func below
 def incident_summary(conn):
     try:
-        print("Connected to HSFD.db")
-
         inc_summary = last_20(conn)
-
-        for incident in inc_summary:
-            print(f"ID: {incident[0]} Type: {incident[1]}, Station: {incident[2]}, Dispatch: {incident[3]}, Actions: {incident[4]}, Call Time: {incident[5]}, Duration: {incident[6]}, Response Time: {incident[7]}")
+        incident_summary_table(inc_summary)
 
     except Exception as e:
-        print("Somthing went wrong")
-        print(e)
+        console.print("[bold red]❌ Something went wrong.[/bold red]")
+        console.print(f"[italic]{e}[/italic]")
+
+def incident_summary_table(inc_summary):
+
+    table = Table(title="🔥 HSFD Incident Summary 🔥", border_style="bright_red")
+
+    table.add_column("ID", justify="center", style="cyan", no_wrap=True)        
+    table.add_column("Type", style=None)
+    table.add_column("Station", justify="center", style="green")
+    table.add_column("Dispatch Notes", style="white")
+    table.add_column("Actions Taken", style="white")
+    table.add_column("Call Time", style="yellow")
+    table.add_column("Duration (hrs)", justify="right", style="blue")
+    table.add_column("Response (min)", justify="right", style="blue")
+
+    for incident in inc_summary:
+        row_style = None
+
+        if incident[1].lower() == "fire":
+            row_style = "bold red"
+        elif incident[1].lower() == "medical":
+            row_style = "bold blue"
+        elif incident[1].lower() == "other":
+            row_style = "bold magenta"
+        else:
+            row_style = "white"
+    
+        table.add_row(
+            str(incident[0]),              #ID
+            incident[1],                   #Type
+            "Station" + " " + str(incident[2]),  #Station
+            incident[3],                   #Dispatch Notes
+            incident[4],                   #Actions Taken
+            str(incident[5]),              #Call Time
+            str(incident[6]),              #Duration
+            str(incident[7]),               #Response Time
+            style=row_style
+        )
+
+        table.add_row(*["-" * 5 for _ in range(8)], style="dim")
+
+    console.print(table)
 
 #-----------------------------------------------------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------------------------------------------
