@@ -204,7 +204,7 @@ def log_new_incident(conn):
         console.print("[cyan]Connected to HSFD.db[/cyan]")
 
         while True:
-            incident_type = Prompt.ask("Enter [bold red]Incident Type[/bold red] (or type 'cancel' to exit)")
+            incident_type = Prompt.ask("Enter [bold red]Incident Type[/bold red] (or type 'cancel' to exit)").strip().capitalize()
             if incident_type.lower() == 'cancel':
                 console.print("[bold red]❌ Logging cancelled[/bold red]")
                 return
@@ -214,7 +214,7 @@ def log_new_incident(conn):
                 console.print("[bold red]❌ Logging cancelled[/bold red]")
                 return
             
-            dspch_notes = Prompt.ask("Enter [bold red]Dispatch Notes[/bold red] (or type 'cancel' to exit)")
+            dspch_notes = Prompt.ask("Enter [bold red]Dispatch Notes[/bold red] (or type 'cancel' to exit)").title()
             if dspch_notes.lower() == 'cancel':
                 console.print("[bold red]❌ Logging cancelled[/bold red]")
                 return

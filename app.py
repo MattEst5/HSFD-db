@@ -8,7 +8,7 @@ app.secret_key = "FirePlug_"
 def connect():
     return psycopg2.connect(
         host="localhost",
-        database="HSFD_test",
+        database="HSFD_",
         user="fireplug_",
         password="Emily!05"
     )
