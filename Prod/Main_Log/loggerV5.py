@@ -16,7 +16,7 @@ console = Console()
 
 # ---- Shift policy (24 -> 48 effective 2026-01-16) ----
 SHIFT_CHANGEOVER_DATE = datetime.strptime("2026-01-16", "%Y-%m-%d").date()
-SHIFT_START_CLOCK = "07:00:00"  # you can change later if needed
+SHIFT_START_CLOCK = "07:00:00"  
 
 def get_shift_hours(shift_date_str: str) -> int:
     """
@@ -30,13 +30,22 @@ def get_shift_hours(shift_date_str: str) -> int:
 def resource_path(relative_name: str) -> Path:
     """Resolve bundled resource path (dev + PyInstaller onefile)."""
     if getattr(sys, "frozen", False) and hasattr(sys, "_MEIPASS"):
-        base = Path(sys._MEIPASS)          # temp extraction dir
+        base = Path(sys._MEIPASS)  # temp extraction dir (bundled files)
     else:
-        base = Path(__file__).resolve().parent  # script directory
+        base = Path(__file__).resolve().parent
     return base / relative_name
 
-env_path = resource_path(".env")
-load_dotenv(dotenv_path=env_path, override=True)
+
+def get_base_dir() -> Path:
+    """Directory of the running script, or the EXE when packaged."""
+    if getattr(sys, "frozen", False):
+        return Path(sys.executable).resolve().parent  # dist folder
+    return Path(__file__).resolve().parent
+
+
+# ✅ Load .env from beside the EXE (or beside the script in dev)
+ENV_PATH = get_base_dir() / ".env"
+load_dotenv(dotenv_path=ENV_PATH, override=True)
 
 class Incident:
     def __init__(self, incident_type, station_id, dspch_notes, actions_taken, call_time, enrt_time, arrival_time, completed_time):
@@ -272,12 +281,12 @@ def log_new_incident(conn):
             station_id = None
             
             while True:
-                station_number = Prompt.ask("Enter [bold red]Station Number[/bold red] (or type 'cancel' to exit)").strip()
+                station_number = Prompt.ask("Enter [bold red]District[/bold red] (or type 'cancel' to exit)").strip()
                 if station_number.lower() == 'cancel':
                     console.print("[bold red]❌ Logging cancelled[/bold red]")
                     return
                 if not station_number.isdigit():
-                    console.print("[bold red]❌ Station number must be a number.[/bold red]")
+                    console.print("[bold red]❌ District must be a number.[/bold red]")
                     continue
 
                 station_number_int = int(station_number)
@@ -333,7 +342,7 @@ def log_new_incident(conn):
             #Display review summary
             review = Group(
             f"[bold cyan]Incident Type:[/bold cyan] {incident.incident_type}",
-            f"[bold cyan]Station Number:[/bold cyan] {station_number_int}",
+            f"[bold cyan]District:[/bold cyan] {station_number_int}",
             f"[bold cyan]Dispatch Notes:[/bold cyan] {incident.dspch_notes}",
             f"[bold cyan]Actions Taken:[/bold cyan] {incident.actions_taken}",
             f"[bold cyan]Call Time:[/bold cyan] {incident.call_time}",
@@ -415,7 +424,7 @@ def check_last_incident(conn):
             details = (
                 f"[bold cyan]Incident ID:[/bold cyan] {last_incident[0]}\n"
                 f"[bold cyan]Type:[/bold cyan] {last_incident[1]}\n"
-                f"[bold cyan]Station Number:[/bold cyan] {last_incident[2]}\n"
+                f"[bold cyan]District:[/bold cyan] {last_incident[2]}\n"
                 f"[bold cyan]Description:[/bold cyan] {last_incident[3]}\n"
                 f"[bold cyan]Call Time:[/bold cyan] {last_incident[5]}"
             )
