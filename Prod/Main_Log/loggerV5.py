@@ -16,7 +16,9 @@ console = Console()
 
 # ---- Shift policy (24 -> 48 effective 2026-01-16) ----
 SHIFT_CHANGEOVER_DATE = datetime.strptime("2026-01-16", "%Y-%m-%d").date()
-SHIFT_START_CLOCK = "07:00:00"  
+SHIFT_START_CLOCK = "07:00:00" 
+
+APP_VERSION = "Firehouse v5.2"
 
 def get_shift_hours(shift_date_str: str) -> int:
     """
@@ -167,22 +169,25 @@ shift_rosters = {
         1:  [7, 23, 26, 51, 54, 59, 76, 80],                 # Station 1 A
         4:  [3, 50, 71],                                     # Station 3 A
         7:  [8, 37, 66],                                     # Station 4 A
-        10: [9, 27, 30, 44, 52, 74, 78],                     # Station 6 A
-        13: [40, 65],                                        # Station 7 A
+        10: [9, 27, 30, 44, 52, 74, 78],                     # Station 2 A
+        13: [40, 65],                                        # Station 5 A
+        16: [],                                              # Station 6 A
     },
     "B": {
         2:  [4, 28, 36, 47, 56, 57, 68, 72, 77],             # Station 1 B
         5:  [20, 32, 64],                                    # Station 3 B
         8:  [24, 29, 62],                                    # Station 4 B
-        11: [5, 14, 21, 39, 75],                             # Station 6 B
-        14: [6, 41, 55],                                     # Station 7 B
+        11: [5, 14, 21, 39, 75],                             # Station 2 B
+        14: [6, 41, 55],                                     # Station 5 B
+        17: [],                                              # Station 6 B
     },
     "C": {
         3:  [12, 15, 33, 45, 49, 58, 69, 70, 79],            # Station 1 C
         6:  [18, 19, 67],                                    # Station 3 C
         9:  [31, 43, 61],                                    # Station 4 C
-        12: [13, 22, 35, 48, 63],                            # Station 6 C
-        15: [16, 25, 60],                                    # Station 7 C
+        12: [13, 22, 35, 48, 63],                            # Station 2 C
+        15: [16, 25, 60],                                    # Station 5 C
+        18: [],                                              # Station 6 C
     },
 }
 
@@ -206,7 +211,9 @@ def insert_incident_unit(conn, incident_id, unit_id):
     cur.execute(insert_query, (incident_id, unit_id))
     conn.commit()
     cur.close()
-    print(f"🚒 Unit {unit_id} added to incident {incident_id}.")
+    
+    unit_name = get_unit_name_from_id(conn, unit_id)
+    print(f"🚒 {unit_name} added to incident {incident_id}.")
 
 def update_shift_ids(conn):
     cur = conn.cursor()
@@ -241,7 +248,36 @@ def get_station_id_from_number(conn, station_number: int) -> int | None:
     )
     row = cur.fetchone()
     cur.close()
+    return row[0] if row else None
+
+def get_unit_id_from_number(conn, unit_number: int):
+    """
+    Translate a public-facing unit_number (e.g., 2, 6, 62, 103)
+    into the internal unit_id.
+    Returns None if not found.
+    """
+    cur = conn.cursor()
+    cur.execute(
+        "SELECT unit_id FROM public.units WHERE unit_number = %s;",
+        (unit_number,)
+    )
+    row = cur.fetchone()
+    cur.close()
     return row[0] if row else None  
+
+def get_unit_name_from_id(conn, unit_id: int):
+    """
+    Return current display name for a unit_id.
+    Example: unit_id 12 -> Rescue 13
+    """
+    cur = conn.cursor()
+    cur.execute(
+        "SELECT unit_name FROM public.units WHERE unit_id = %s;",
+        (unit_id,)
+    )
+    row = cur.fetchone()
+    cur.close()
+    return row[0] if row else f"Unit {unit_id}"
 
 def last_20(conn):
     cur = conn.cursor()
@@ -363,9 +399,22 @@ def log_new_incident(conn):
                 print(f"✅ Incident {incident_id} inserted successfully.")
 
                 while True:
-                    unit_id = input(f"Enter Unit ID assigned to incident {incident_id} (or press Enter to skip): ")
-                    if unit_id == "":
+                    unit_number = input(f"Enter Unit Number assigned to incident {incident_id} (or press Enter to skip): ").strip()
+
+                    if unit_number == "":
                         break
+
+                    if not unit_number.isdigit():
+                        console.print("[bold red]❌ Unit number must be a number.[/bold red]")
+                        continue
+
+                    unit_number_int = int(unit_number)
+                    unit_id = get_unit_id_from_number(conn, unit_number_int)
+
+                    if unit_id is None:
+                        console.print(f"[bold red]❌ Unit Number {unit_number_int} not found in units table.[/bold red]")
+                        continue
+
                     insert_incident_unit(conn, incident_id, unit_id)
 
                 console.print("✅ [bold green] All units entered successfully.[bold green]")
@@ -506,6 +555,7 @@ def incident_summary_table(inc_summary):
 
 def main_menu():
     conn = connect()
+    console.print(f"[dim]{APP_VERSION}[/dim]")
 
     while True:
         header = Align.center("[bold red]🔥 HSFD Main Menu 🔥[/bold red]")

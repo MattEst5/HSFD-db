@@ -11,7 +11,7 @@ del /q Firehouse.spec 2>nul
 echo Building Firehouse.exe...
 py -m PyInstaller --onefile --console --clean --noconfirm ^
   --name "Firehouse" ^
-  --icon "Firehouse.ico" ^
+  --icon "firehouse2.ico" ^
   "loggerV5.py"
 
 echo Copying .env into dist...
